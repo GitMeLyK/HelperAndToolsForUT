@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Base\ContextOverTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+	<PackageReference Include="FluentAssertions.ArgumentMatchers.Moq" Version="1.*-*" />
+	<PackageReference Include="FluentAssertions" Version="5.10.2" />
+	<PackageReference Include="FluentAssertions.Microsoft.Extensions.DependencyInjection" Version="1.0.0" />
+
+	<PackageReference Include="DumpExtensions" Version="2.0.0" />
+	<PackageReference Include="AutoFixture.NUnit3" Version="4.17.0" />
+
+	<PackageReference Include="Moq" Version="4.16.1" />
+	<PackageReference Include="AssertNet.Moq" Version="2.0.0" />
+	<PackageReference Include="Moq.AutoMock" Version="3.2.0-ci0207" />
+	<PackageReference Include="Moq.Contrib.HttpClient" Version="1.3.0" />
+	<PackageReference Include="MoqMicrosoftConfiguration" Version="1.0.5" />
+
+  
+  </ItemGroup>
+
+</Project>
