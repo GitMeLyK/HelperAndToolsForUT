@@ -1,11 +1,10 @@
 ﻿using System;
-using System;
 using System.Linq;
-using HelperAndToolsForUT.Helper.IocModule;
 //
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using HelperAndToolsForUT.Helper.Abstraction.IOC;
 
 namespace HelperAndToolsForUT.Helper.Test.IocModule.BaseTests
 {

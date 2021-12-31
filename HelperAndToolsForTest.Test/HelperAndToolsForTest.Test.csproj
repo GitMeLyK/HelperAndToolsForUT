@@ -1,21 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net5.0</TargetFrameworks>
+		<VersionPrefix>2.0.0</VersionPrefix>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>	
 
   <ItemGroup>
 	
+	<PackageReference Include="AutoFixture.AutoMoq" Version="4.17.0" />
+	
+	<PackageReference Include="FluentAssertions" Version="5.10.3" />
+	<PackageReference Include="Moq" Version="[4.16.1,5)" />	  
+
 	<PackageReference Include="DumpExtensions" Version="2.0.0" />
 
-	<PackageReference Include="FluentAssertions.ArgumentMatchers.Moq" Version="1.*-*" />
-	<PackageReference Include="FluentAssertions" Version="5.10.2" />
+	<PackageReference Include="AutoFixture" Version="4.17.0" />
 
+	<PackageReference Include="Moq.AutoMock" Version="3.2.0-ci0207" />
 	<PackageReference Include="NUnit" Version="3.13.2" />
 	<PackageReference Include="NUnit3TestAdapter" Version="4.2.0" />
-	
-	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+
+	<PackageReference Include="coverlet.msbuild" Version="3.1.0">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>	  
+	  
+	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0-preview-20211130-02" />
 
   </ItemGroup>
 

@@ -3,6 +3,9 @@ using System.IO;
 
 namespace HelperAndToolsForUT.Helper.Utils
 {
+    /// <summary>
+    ///     IO Utils
+    /// </summary>
     public static class ContextIOSystem
     {
 

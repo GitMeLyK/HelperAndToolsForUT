@@ -1,29 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using Moq;
 using NUnit.Framework;
+
 using Microsoft.Extensions.DependencyInjection;
 
-using HelperAndToolsForUT.Helper.MoqExtensions;
-using HelperAndToolsForUT.Helper.DiExtensions;
+using HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept;
+using HelperAndToolsForUT.Helper.Extensions.IocExtensions;
+using HelperAndToolsForUT.Helper.Extensions.MoqExtensions;
 
 namespace HelperAndToolsForUT.Helper.SetupWIthConcept.Test
 {
 
     #region ### SERVICE ###
 
-    interface IStringService
+    public interface IStringService
     {
         string GetString();
     }
 
-    interface IOtherStringService : IStringService
+    public interface IOtherStringService : IStringService
     {
         //
     }
 
-    class StringService : IStringService, IOtherStringService
+    public class StringService : IStringService, IOtherStringService
     {
         public string GetString()
         {
@@ -35,12 +38,12 @@ namespace HelperAndToolsForUT.Helper.SetupWIthConcept.Test
 
     #region ### FIXTURE ###
 
-    interface IFixture
+    public interface IFixture
     {
         string GetCombinedStrings();
     }
 
-    interface ICaptureFixture
+    public interface ICaptureFixture
     {
         void DoSomething(string key);
         void DoSomething(string key, int value);
@@ -48,7 +51,7 @@ namespace HelperAndToolsForUT.Helper.SetupWIthConcept.Test
         Task DoSomethingAsync(string key, int value);
     }
 
-    class Fixture : IFixture
+    public class Fixture : IFixture
     {
         private readonly IStringService stringService;
         private readonly IOtherStringService otherStringService;

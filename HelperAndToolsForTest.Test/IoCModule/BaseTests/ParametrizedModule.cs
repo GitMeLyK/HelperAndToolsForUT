@@ -1,5 +1,5 @@
 ﻿using System;
-using HelperAndToolsForUT.Helper.IocModule;
+using HelperAndToolsForUT.Helper.Abstraction.IOC;
 using Microsoft.Extensions.DependencyInjection;
 
 

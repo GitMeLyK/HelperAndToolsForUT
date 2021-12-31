@@ -7,15 +7,19 @@ using System.Linq.Expressions;
 using Moq;
 using Moq.Language.Flow;
 
-namespace HelperAndToolsForUT.Helper.MoqExtensions
+namespace HelperAndToolsForUT.Helper.Extensions.MoqExtensions
 {
 
+    /// <summary>
+    ///     
+    /// </summary>
     public static partial class MoqOrderAndNotifyExtensions
     {
         /// <summary>
         ///     Return in order Sequencer of TResult objects Results
         /// </summary>
         /// <example>
+        /// <code><![CDATA[
         ///     var mock = new Mock<ISomeInterface>();
         ///     mock.Setup(r => r.GetNext())
         ///     .ReturnsInOrder(1, 2, new InvalidOperationException());
@@ -23,6 +27,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         ///     Console.WriteLine(mock.Object.GetNext());
         ///     Console.WriteLine(mock.Object.GetNext());
         ///     Console.WriteLine(mock.Object.GetNext()); // Throws InvalidOperationException
+        ///     ]]></code>
         /// </example>
         public static void ReturnsInOrder<T, TResult>(this ISetup<T, TResult> setup,
             params TResult[] results) where T : class
@@ -34,6 +39,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         ///     Return in order Sequencer of object Results
         /// </summary>
         /// <example>
+        ///     <code><![CDATA[
         ///     var mock = new Mock<ISomeInterface>();
         ///     mock.Setup(r => r.GetNext())
         ///     .ReturnsInOrder(1, 2, new InvalidOperationException());
@@ -41,6 +47,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         ///     Console.WriteLine(mock.Object.GetNext());
         ///     Console.WriteLine(mock.Object.GetNext());
         ///     Console.WriteLine(mock.Object.GetNext()); // Throws InvalidOperationException
+        ///     ]]></code>
         /// </example>
         public static void ReturnsInOrder<T, TResult>(this ISetup<T, TResult> setup, params object[] results) where T : class
         {
@@ -61,7 +68,9 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         /// <summary>
         ///     Simplify PropertyChanged on Moq Setup of invoker delegates.
         /// </summary>
-        /// <example>
+        /// <example> 
+        ///     <code><![CDATA[
+        ///     
         ///     public interface ISampleModel : INotifyPropertyChanged {
         ///         string Value { get; set; }
         ///     }
@@ -116,7 +125,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         /// 
         ///     ::With this extension::
         ///     --> sampleModel.NotifyPropertyChanged(m => m.Value, "NewValue");
-        /// 
+        ///     ]]></code>
         /// </example>
         /// <returns></returns>
         public static IReturnsResult<T> NotifyPropertyChanged<T, TResult>(this Mock<T> mock, Expression<Func<T, TResult>> expression, TResult setupValue) where T : class, INotifyPropertyChanged

@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HelperAndToolsForUT.Helper.MoqExtensions
+namespace HelperAndToolsForUT.Helper.Extensions.MoqExtensions
 {
     /// <summary>
-    /// Mock extensions for capturing arguments for async methods on a setup.
+    ///     Mock extensions for capturing arguments for async methods on a setup.
     /// </summary>
     public static class MockAsyncCaptureExtensions
     {

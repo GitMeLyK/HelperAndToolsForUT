@@ -5,9 +5,9 @@ using FluentAssertions;
 using Moq;
 using AutoFixture;
 //
-using HelperAndToolsForUT.Helper.MoqExtensions;
 
 using HelperAndToolsForUT.Helper.Test.FluentAssertions.Tools;
+using HelperAndToolsForUT.Helper.Extensions.MoqExtensions;
 
 namespace HelperAndToolsForUT.Helper.Test.FluentAssertions
 {

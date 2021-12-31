@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 //
-using HelperAndToolsForUT.Helper.IocExtensions;
-using HelperAndToolsForUT.Helper.IocModule;
+using HelperAndToolsForUT.Helper.Abstraction.IOC;
+using HelperAndToolsForUT.Helper.Extensions.IocExtensions;
 
 namespace HelperAndToolsForUT.Helper.Test.IocModule.BaseTests
 {

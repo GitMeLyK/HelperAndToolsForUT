@@ -1,17 +1,20 @@
-﻿using HelperAndToolsForUT.Helper.IocModule;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
-namespace HelperAndToolsForUT.Helper.IocExtensions
+using HelperAndToolsForUT.Helper.Abstraction.IOC;
+
+namespace HelperAndToolsForUT.Helper.Extensions.IocExtensions
 {
 
     /// <summary>
     ///     We all love to have modules to simplify registrations on our DI framework of choice.
+    ///     To use in combination with Class implmenttive of ModuleBase
     /// </summary>
     public static class ModuleExtensions
     {
         /// <summary>
         ///     We all love to have modules to simplify registrations on our DI framework of choice.
+        ///     To use in combination with Class implmenttive of ModuleBase
         ///     See tests for examples
         /// </summary>
         /// <returns></returns>
@@ -23,6 +26,7 @@ namespace HelperAndToolsForUT.Helper.IocExtensions
 
         /// <summary>
         ///     We all love to have modules to simplify registrations on our DI framework of choice.
+        ///     To use in combination with Class implmenttive of ModuleBase
         ///     See tests for examples
         /// </summary>
         /// <returns></returns>
@@ -35,6 +39,7 @@ namespace HelperAndToolsForUT.Helper.IocExtensions
 
         /// <summary>
         ///     We all love to have modules to simplify registrations on our DI framework of choice.
+        ///     To use in combination with Class implmenttive of ModuleBase
         ///     See tests for examples
         /// </summary>
         /// <returns></returns>

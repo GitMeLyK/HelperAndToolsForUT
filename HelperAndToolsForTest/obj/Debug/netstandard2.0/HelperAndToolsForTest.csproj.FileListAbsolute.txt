@@ -1,0 +1,10 @@
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\netstandard2.0\HelperAndToolsForTest.deps.json
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\netstandard2.0\HelperAndToolsForTest.dll
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\netstandard2.0\HelperAndToolsForTest.pdb
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\netstandard2.0\HelperAndToolsForTest.xml
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.AssemblyInfoInputs.cache
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.AssemblyInfo.cs
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.csproj.CoreCompileInputs.cache
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.dll
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.xml
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.pdb

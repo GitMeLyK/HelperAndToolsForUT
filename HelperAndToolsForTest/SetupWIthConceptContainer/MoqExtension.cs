@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HelperAndToolsForUT.Helper.MoqExtensions
+namespace HelperAndToolsForUT.Helper.Extensions.MoqExtensions
 {
     /// <summary>
     ///     Mock extensions for capturing arguments on a setup.

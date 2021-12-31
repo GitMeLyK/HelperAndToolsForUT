@@ -6,9 +6,17 @@ using NUnit.Framework;
 
 namespace HelperAndToolsForUT.Helper.Common
 {
+
+    /// <summary>
+    ///     Fixture Test for get Assembly Version and Info
+    /// </summary>
     [TestFixture]
     public class AssemblySetup
     {
+        /// <summary>
+        ///     Context to Test caller
+        /// </summary>
+        /// <param name="context">Caller Test</param>
         [SetUp]
         public static void AssemblyInitialize(TestContext context)
         {

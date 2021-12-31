@@ -1,25 +1,57 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<ProjectGuid>{B55A2A9B-EC23-43A6-A3FE-6134EAAEBB43}</ProjectGuid>
+		<TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+		<VersionPrefix>2.0.0</VersionPrefix>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>HelperAndToolsForUT.pfx</AssemblyOriginatorKeyFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>	
+		
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>HelperAndToolsForUnitTest</PackageId>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Copyright>Carmelo Daniele (OmelYk)</Copyright>
+		<Description>Support to Projects for Unit Test with.:
+		Moq
+		Autofixture
+		NUnit3
+		FluentAssertions
+		
+		Note Using Only Microsoft.Extensions.DependencyInjection.</Description>
+		<RepositoryUrl>https://github.com/GitMeLyK/HelperAndToolsForUT</RepositoryUrl>
+		<Authors>Carmelo Daniele</Authors>
+		<Company>DaCa Soft</Company>
+		<Product>HelperAndToolsForUT</Product>
+
+		<PackageTags>netstandard;netcore;Moq;FluentAssertions;mocking;mocks;unittesting;unittest;TDD</PackageTags>
+		<PackageProjectUrl>https://github.com/GitMeLyK/HelperAndToolsForUT/commits/1.0.0</PackageProjectUrl>
+		<PackageReleaseNotes>https://github.com/GitMeLyK/HelperAndToolsForUT/commits/1.0.0/releases</PackageReleaseNotes>
+		<PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/GitMeLyK/HelperAndToolsForUT</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>		
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Base\ContextOverTest.cs" />
+	</ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Base\ContextOverTest.cs" />
-  </ItemGroup>
 
-  <ItemGroup>
-
-	<PackageReference Include="FluentAssertions.ArgumentMatchers.Moq" Version="1.*-*" />
-	<PackageReference Include="FluentAssertions" Version="5.10.2" />
+	<PackageReference Include="FluentAssertions" Version="5.10.3" />
+	<PackageReference Include="Moq" Version="[4.16.1,5)" />	  
+	  
 	<PackageReference Include="FluentAssertions.Microsoft.Extensions.DependencyInjection" Version="1.0.0" />
 
 	<PackageReference Include="DumpExtensions" Version="2.0.0" />
 	<PackageReference Include="AutoFixture.NUnit3" Version="4.17.0" />
 
-	<PackageReference Include="Moq" Version="4.16.1" />
 	<PackageReference Include="AssertNet.Moq" Version="2.0.0" />
-	<PackageReference Include="Moq.AutoMock" Version="3.2.0-ci0207" />
+	<PackageReference Include="Moq.AutoMock" Version="3.1.0" />
 	<PackageReference Include="Moq.Contrib.HttpClient" Version="1.3.0" />
 	<PackageReference Include="MoqMicrosoftConfiguration" Version="1.0.5" />
 

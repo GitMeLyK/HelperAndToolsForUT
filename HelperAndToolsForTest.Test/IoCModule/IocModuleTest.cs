@@ -8,8 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using FluentAssertions;
 using NUnit.Framework;
 //
-using HelperAndToolsForUT.Helper.IocExtensions;
 using HelperAndToolsForUT.Helper.Test.IocModule.BaseTests;
+using HelperAndToolsForUT.Helper.Extensions.IocExtensions;
 
 namespace HelperAndToolsForUT.Helper.Test.IocModule
 {

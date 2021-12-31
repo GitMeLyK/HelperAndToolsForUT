@@ -4,7 +4,7 @@ using Moq;
 
 using Microsoft.Extensions.DependencyInjection; // built -in IoC Container
 
-namespace HelperAndToolsForUT.Helper.SetupWIthConcept
+namespace HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept
 {
     /// <summary>
     ///     A concept provides easy mocking for a given unit, 
@@ -24,10 +24,12 @@ namespace HelperAndToolsForUT.Helper.SetupWIthConcept
             // this.Builder = new ContainerBuilder();       // Ioc AutoFac
         }
 
+        /*
         /// <summary>
         ///     The Autofac container builder of the concept.
         /// </summary>
         //public ContainerBuilder Builder { get; }
+        */
 
         /// <summary>
         ///     The MS container builder of the concept.
@@ -66,6 +68,7 @@ namespace HelperAndToolsForUT.Helper.SetupWIthConcept
             }
         }
 
+        /*
         /// <summary>
         ///     Builds an Autofac container from the given concept.
         /// </summary>
@@ -74,6 +77,7 @@ namespace HelperAndToolsForUT.Helper.SetupWIthConcept
         // {
         //    return this.Builder.Build();
         // }
+        */
 
         /// <summary>
         ///     Builds an Ms Builtin container from the given concept.

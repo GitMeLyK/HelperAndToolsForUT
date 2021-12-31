@@ -3,13 +3,14 @@ using System;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace HelperAndToolsForUT.Helper
+namespace HelperAndToolsForUT.Helper.Abstraction.MOQ
 {
 
     /// <summary>
     ///     Base to Implement Test Builder on Class complex with subclass
     /// </summary>
     /// <example>
+    /// <code><![CDATA[
     /// namespace Project.MoqClass.Tests
     /// {
     ///      using NUnit.Framework;
@@ -64,6 +65,7 @@ namespace HelperAndToolsForUT.Helper
     ///          }
     ///      }
     /// }
+    ///     ]]></code>
     /// </example>
     /// <typeparam name="TObject"></typeparam>
     /// <typeparam name="TBuilder"></typeparam>
@@ -75,6 +77,13 @@ namespace HelperAndToolsForUT.Helper
 
         private BinaryExpression setup;
 
+        /// <summary>
+        ///     Registering in builder for build a series of property of setup MOQ
+        /// </summary>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="expression"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         protected TBuilder RegisterValueForProperty<TValue>(Expression<Func<TObject, TValue>> expression, TValue value)
         {
             if (!((expression.Body as MemberExpression)?.Member is PropertyInfo targetProperty))
@@ -89,11 +98,21 @@ namespace HelperAndToolsForUT.Helper
             return this.UpdateSetup(result);
         }
 
+        /// <summary>
+        ///     Register a Flag in Setup builder
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
         protected TBuilder RegisterFlag(Expression<Func<TObject, bool>> expression)
         {
             return this.RegisterValueForProperty(expression, true);
         }
 
+        /// <summary>
+        ///     Update with expression a setupe Mock
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
         protected TBuilder UpdateSetup(BinaryExpression expression)
         {
             this.setup = this.IsDefaultSetup()
@@ -103,11 +122,19 @@ namespace HelperAndToolsForUT.Helper
             return (TBuilder)this;
         }
 
+        /// <summary>
+        ///     Is a Default Setup of Mock
+        /// </summary>
+        /// <returns></returns>
         protected bool IsDefaultSetup()
         {
             return this.setup is null;
         }
 
+        /// <summary>
+        ///     Builder of this builder context.
+        /// </summary>
+        /// <returns></returns>
         public TObject Build()
         {
             return this.IsDefaultSetup()

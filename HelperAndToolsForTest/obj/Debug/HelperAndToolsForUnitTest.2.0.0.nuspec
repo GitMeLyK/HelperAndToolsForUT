@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>HelperAndToolsForUnitTest</id>
+    <version>2.0.0</version>
+    <authors>Carmelo Daniele</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">Unlicense</license>
+    <licenseUrl>https://licenses.nuget.org/Unlicense</licenseUrl>
+    <projectUrl>https://github.com/GitMeLyK/HelperAndToolsForUT/commits/1.0.0</projectUrl>
+    <description>Support to Projects for Unit Test with.:
+		Moq
+		Autofixture
+		NUnit3
+		FluentAssertions
+		
+		Note Using Only Microsoft.Extensions.DependencyInjection.</description>
+    <releaseNotes>https://github.com/GitMeLyK/HelperAndToolsForUT/commits/1.0.0/releases</releaseNotes>
+    <copyright>Carmelo Daniele (OmelYk)</copyright>
+    <tags>netstandard netcore Moq FluentAssertions mocking mocks unittesting unittest TDD</tags>
+    <repository type="git" url="https://github.com/GitMeLyK/HelperAndToolsForUT" />
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="AssertNet.Moq" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="AutoFixture.NUnit3" version="4.17.0" exclude="Build,Analyzers" />
+        <dependency id="DumpExtensions" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="FluentAssertions" version="5.10.3" exclude="Build,Analyzers" />
+        <dependency id="FluentAssertions.Microsoft.Extensions.DependencyInjection" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Moq" version="[4.16.1, 5.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Moq.AutoMock" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="Moq.Contrib.HttpClient" version="1.3.0" exclude="Build,Analyzers" />
+        <dependency id="MoqMicrosoftConfiguration" version="1.0.5" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AssertNet.Moq" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="AutoFixture.NUnit3" version="4.17.0" exclude="Build,Analyzers" />
+        <dependency id="DumpExtensions" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="FluentAssertions" version="5.10.3" exclude="Build,Analyzers" />
+        <dependency id="FluentAssertions.Microsoft.Extensions.DependencyInjection" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Moq" version="[4.16.1, 5.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Moq.AutoMock" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="Moq.Contrib.HttpClient" version="1.3.0" exclude="Build,Analyzers" />
+        <dependency id="MoqMicrosoftConfiguration" version="1.0.5" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\net5.0\HelperAndToolsForTest.dll" target="lib\net5.0\HelperAndToolsForTest.dll" />
+    <file src="C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\net5.0\HelperAndToolsForTest.xml" target="lib\net5.0\HelperAndToolsForTest.xml" />
+    <file src="C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\netstandard2.0\HelperAndToolsForTest.dll" target="lib\netstandard2.0\HelperAndToolsForTest.dll" />
+    <file src="C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\bin\Debug\netstandard2.0\HelperAndToolsForTest.xml" target="lib\netstandard2.0\HelperAndToolsForTest.xml" />
+  </files>
+</package>

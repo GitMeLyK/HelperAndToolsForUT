@@ -5,6 +5,10 @@ using System.Reflection;
 
 namespace HelperAndToolsForUT.Helper.Extensions.IocExtensions
 {
+
+	/// <summary>
+	///		A helper method to register the type as providing all of its public interfaces. 
+	/// </summary>
 	public static class DiExtensions
 	{
 

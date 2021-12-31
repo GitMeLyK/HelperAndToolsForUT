@@ -1,0 +1,598 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HelperAndToolsForTest</name>
+    </assembly>
+    <members>
+        <member name="T:HelperAndToolsForUT.Helper.Common.AssemblySetup">
+            <summary>
+                Fixture Test for get Assembly Version and Info
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Common.AssemblySetup.AssemblyInitialize(NUnit.Framework.TestContext)">
+            <summary>
+                Context to Test caller
+            </summary>
+            <param name="context">Caller Test</param>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Utils.ContextIOSystem">
+            <summary>
+                IO Utils
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Utils.ContextIOSystem.CheckKeywordsExist(System.String,System.String[])">
+            <summary>
+                Check in file phrase 
+            </summary>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.IocExtensions.DiExtensions">
+            <summary>
+            	A helper method to register the type as providing all of its public interfaces. 
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IocExtensions.DiExtensions.RegisterAsImplementedInterfaces``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+            <summary>
+            	A helper method to register the type as providing all of its public interfaces. 
+            	This helper methods is manually to use in context also it is possible use a small 
+            	NuGet library (e.g. NetCore.AutoRegisterDi).
+            </summary>
+            <remarks>
+            	If you don't use Dependency Management Containers like AutoFac DryOc or whatever, 
+            	and only the built-in .net core IoC is used (Microsoft.Extensions.DependencyInjection).
+            </remarks>
+            <typeparam name="TService"></typeparam>
+            <param name="services"></param>
+            <param name="lifetime"></param>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.IocExtensions.ModuleExtensions">
+            <summary>
+                We all love to have modules to simplify registrations on our DI framework of choice.
+                To use in combination with Class implmenttive of ModuleBase
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IocExtensions.ModuleExtensions.RegisterModule``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,``0)">
+            <summary>
+                We all love to have modules to simplify registrations on our DI framework of choice.
+                To use in combination with Class implmenttive of ModuleBase
+                See tests for examples
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IocExtensions.ModuleExtensions.RegisterModule``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                We all love to have modules to simplify registrations on our DI framework of choice.
+                To use in combination with Class implmenttive of ModuleBase
+                See tests for examples
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IocExtensions.ModuleExtensions.RegisterModule``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{Microsoft.Extensions.DependencyInjection.IServiceCollection,``0})">
+            <summary>
+                We all love to have modules to simplify registrations on our DI framework of choice.
+                To use in combination with Class implmenttive of ModuleBase
+                See tests for examples
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqOrderAndNotifyExtensions">
+            <summary>
+                
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqOrderAndNotifyExtensions.ReturnsInOrder``2(Moq.Language.Flow.ISetup{``0,``1},``1[])">
+            <summary>
+                Return in order Sequencer of TResult objects Results
+            </summary>
+            <example>
+            <code><![CDATA[
+                var mock = new Mock<ISomeInterface>();
+                mock.Setup(r => r.GetNext())
+                .ReturnsInOrder(1, 2, new InvalidOperationException());
+                
+                Console.WriteLine(mock.Object.GetNext());
+                Console.WriteLine(mock.Object.GetNext());
+                Console.WriteLine(mock.Object.GetNext()); // Throws InvalidOperationException
+                ]]></code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqOrderAndNotifyExtensions.ReturnsInOrder``2(Moq.Language.Flow.ISetup{``0,``1},System.Object[])">
+            <summary>
+                Return in order Sequencer of object Results
+            </summary>
+            <example>
+                <code><![CDATA[
+                var mock = new Mock<ISomeInterface>();
+                mock.Setup(r => r.GetNext())
+                .ReturnsInOrder(1, 2, new InvalidOperationException());
+                
+                Console.WriteLine(mock.Object.GetNext());
+                Console.WriteLine(mock.Object.GetNext());
+                Console.WriteLine(mock.Object.GetNext()); // Throws InvalidOperationException
+                ]]></code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqOrderAndNotifyExtensions.NotifyPropertyChanged``2(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
+            <summary>
+                Simplify PropertyChanged on Moq Setup of invoker delegates.
+            </summary>
+            <example> 
+                <code><![CDATA[
+                
+                public interface ISampleModel : INotifyPropertyChanged {
+                    string Value { get; set; }
+                }
+                
+                public class SampleModel : ISampleModel
+                {
+                    public event PropertyChangedEventHandler PropertyChanged;
+                    private string _value;
+                
+                    public string Value
+                    {
+                        get { return _value; }
+                        set
+                        {
+                            if (!Equals(_value, value))
+                            {
+                                _value = value;
+                                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Value)));
+                            }
+                        }
+                
+                    }
+                }
+                
+                :: TEST
+                [Fact]
+                public void WhenDoNotUseExtensions()
+                {
+                    var sampleModel = new Mock<ISampleModel>();
+                    var actual = new SampleViewModel(sampleModel.Object);
+                
+                    sampleModel.Setup(m => m.Value).Returns("NewValue");
+                    sampleModel.Raise(m => m.PropertyChanged += null, new PropertyChangedEventArgs("Value"));
+                
+                    Assert.Equal("NewValue", actual.ViewModelValue);
+                }
+                
+                [Fact]
+                public void WhenUseExtensions()
+                {
+                    var sampleModel = new Mock<ISampleModel>();
+                    var actual = new SampleViewModel(sampleModel.Object);
+                
+                    sampleModel.NotifyPropertyChanged(m => m.Value, "NewValue");
+                
+                    Assert.Equal("NewValue", actual.ViewModelValue);
+                }        
+                
+                ::When not extension::
+                --> sampleModel.Setup(m => m.Value).Returns("NewValue");
+                --> sampleModel.Raise(m => m.PropertyChanged += null, new PropertyChangedEventArgs("Value"));
+            
+                ::With this extension::
+                --> sampleModel.NotifyPropertyChanged(m => m.Value, "NewValue");
+                ]]></code>
+            </example>
+            <returns></returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.Its">
+            <summary>
+                Contains helper methods that combine fuctionality of Moq and FluentAssertions
+                to make it easier to work with complex input parameters in mocks.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.Its.EquivalentTo``1(``0)">
+            <summary>
+                Matches any value that is equivalent to <paramref name="expected"/>.
+            </summary>
+            <typeparam name="TValue">Type of the argument to check.</typeparam>
+            <param name="expected">The expected object to match.</param>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.Its.EquivalentTo``1(``0,System.Func{FluentAssertions.Equivalency.EquivalencyAssertionOptions{``0},FluentAssertions.Equivalency.EquivalencyAssertionOptions{``0}})">
+            <summary>
+                Matches any value that is equivalent to <paramref name="expected"/>.
+            </summary>
+            <typeparam name="TValue">Type of the argument to check.</typeparam>
+            <param name="expected">The expected object to match.</param>
+            <param name="config">
+                A reference to the <seealso cref="T:FluentAssertions.Equivalency.EquivalencyAssertionOptions`1"/>
+                configuration object that can be used to influence the way the object graphs
+                are compared. You can also provide an alternative instance of the <seealso cref="T:FluentAssertions.Equivalency.EquivalencyAssertionOptions`1"/> class.
+                The global defaults are determined by the <seealso cref="T:FluentAssertions.AssertionOptions"/> class.
+            </param>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.Its.AreEquivalent``1(``0,``0,System.Func{FluentAssertions.Equivalency.EquivalencyAssertionOptions{``0},FluentAssertions.Equivalency.EquivalencyAssertionOptions{``0}})">
+            <summary>
+                Matches any value that is equivalent to <paramref name="expected"/>.
+            </summary>
+            <typeparam name="TValue">Type of the argument to check.</typeparam>
+            <param name="actual">Current object to verify equivalence!</param>
+            <param name="expected">The expected object to match.</param>
+            <param name="config">
+                A reference to the <seealso cref="T:FluentAssertions.Equivalency.EquivalencyAssertionOptions`1"/>
+                configuration object that can be used to influence the way the object graphs
+                are compared. You can also provide an alternative instance of the <seealso cref="T:FluentAssertions.Equivalency.EquivalencyAssertionOptions`1"/> class.
+                The global defaults are determined by the <seealso cref="T:FluentAssertions.AssertionOptions"/> class.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockAsyncCaptureExtensions">
+            <summary>
+                Mock extensions for capturing arguments for async methods on a setup.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockAsyncCaptureExtensions.Capture``2(Moq.Language.ICallback{``0,System.Threading.Tasks.Task},System.Collections.Generic.List{``1})">
+            <summary>
+                Captures a single argument for the current setup.
+            </summary>
+            <typeparam name="TMock">The type of the mocked unit.</typeparam>
+            <typeparam name="T1">The type of argument to capture.</typeparam>
+            <param name="callback">The setup to capture arguments for.</param>
+            <param name="results">The list to store captured arguments in.</param>
+            <returns>The continuation of the setup.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockAsyncCaptureExtensions.Capture``3(Moq.Language.ICallback{``0,System.Threading.Tasks.Task},System.Collections.Generic.List{System.Tuple{``1,``2}})">
+            <summary>
+                Captures two arguments for the current setup.
+            </summary>
+            <typeparam name="TMock">The type of the mocked unit.</typeparam>
+            <typeparam name="T1">The type of the first argument to capture.</typeparam>
+            <typeparam name="T2">The type of the second argument to capture.</typeparam>
+            <param name="callback">The setup to capture arguments for.</param>
+            <param name="results">The list to store captured arguments in.</param>
+            <returns>The continuation of the setup.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockAsyncCaptureExtensions.Capture``3(Moq.Language.ICallback{``0,System.Threading.Tasks.Task},System.Collections.Generic.List{``1},System.Collections.Generic.List{``2})">
+            <summary>
+                Captures two arguments for the current setup.
+            </summary>
+            <typeparam name="TMock">The type of the mocked unit.</typeparam>
+            <typeparam name="T1">The type of the first argument to capture.</typeparam>
+            <typeparam name="T2">The type of the second argument to capture.</typeparam>
+            <param name="callback">The setup to capture arguments for.</param>
+            <param name="t1Results">The list to store the captured first arguments in.</param>
+            <param name="t2Results">The list to store the captured second arguments in.</param>
+            <returns>The continuation of the setup.</returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockCaptureExtensions">
+            <summary>
+                Mock extensions for capturing arguments on a setup.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockCaptureExtensions.Capture``1(Moq.Language.ICallback,System.Collections.Generic.List{``0})">
+            <summary>
+                Captures a single argument for the current setup.
+            </summary>
+            <typeparam name="T1">The type of argument to capture.</typeparam>
+            <param name="callback">The setup to capture arguments for.</param>
+            <param name="results">The list to store captured arguments in.</param>
+            <returns>The continuation of the setup.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockCaptureExtensions.Capture``2(Moq.Language.ICallback,System.Collections.Generic.List{System.Tuple{``0,``1}})">
+            <summary>
+                Captures two arguments for the current setup.
+            </summary>
+            <typeparam name="T1">The type of the first argument to capture.</typeparam>
+            <typeparam name="T2">The type of the second argument to capture.</typeparam>
+            <param name="callback">The setup to capture arguments for.</param>
+            <param name="results">The list to store captured arguments in.</param>
+            <returns>The continuation of the setup.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockCaptureExtensions.Capture``2(Moq.Language.ICallback,System.Collections.Generic.List{``0},System.Collections.Generic.List{``1})">
+            <summary>
+                Captures two arguments for the current setup.
+            </summary>
+            <typeparam name="T1">The type of the first argument to capture.</typeparam>
+            <typeparam name="T2">The type of the second argument to capture.</typeparam>
+            <param name="callback">The setup to capture arguments for.</param>
+            <param name="t1Results">The list to store the captured first arguments in.</param>
+            <param name="t2Results">The list to store the captured second arguments in.</param>
+            <returns>The continuation of the setup.</returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqExtensions">
+            <summary>
+                Extension methods (and two classes) for creating setups with a matching verification, 
+                this makes you write less code and avoid errors such as mismatching expressions between 
+                setup and verification
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqExtensions.SetupWithVerification``1(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Action{``0}},System.Func{Moq.Times},System.Action{Moq.Language.Flow.ISetup{``0}})">
+            <summary>
+                Extension methods (and two classes) for creating setups with a matching verification, 
+                this makes you write less code and avoid errors such as mismatching expressions between 
+                setup and verification
+            </summary>
+            <example>
+            <code><![CDATA[
+             [Fact]
+             public void ActionSetupWithVerificationShouldConfigureMock()
+             {
+                 bool configured = false;
+            
+                 var mock = new Mock<VerificationStunt>();
+            
+                 mock.SetupWithVerification(m => m.DoWork(), Times.Once,
+                     it => it.Callback(() => configured = true));
+            
+                 mock.Object.DoWork();
+            
+                 configured.Should().BeTrue();
+             }
+            
+             [Fact]
+             public void FuncSetupWithVerificationShouldConfigureMock()
+             {
+                 var mock = new Mock<VerificationStunt>();
+            
+                 mock.SetupWithVerification(m => m.GetValue(), Times.Once, it => it.Returns(1));
+            
+                 var result = mock.Object.GetValue();
+            
+                 result.Should().Be(1);
+             }
+                ]]></code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqExtensions.SetupWithVerification``2(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{Moq.Times},System.Action{Moq.Language.Flow.ISetup{``0,``1}})">
+            <summary>
+                Extension methods (and two classes) for creating setups with a matching verification, 
+                this makes you write less code and avoid errors such as mismatching expressions between 
+                setup and verification
+            </summary>
+            <example>
+            <code><![CDATA[
+             [Fact]
+             public void ActionSetupWithVerificationShouldConfigureMock()
+             {
+                 bool configured = false;
+            
+                 var mock = new Mock<VerificationStunt>();
+            
+                 mock.SetupWithVerification(m => m.DoWork(), Times.Once,
+                     it => it.Callback(() => configured = true));
+            
+                 mock.Object.DoWork();
+            
+                 configured.Should().BeTrue();
+             }
+            
+             [Fact]
+             public void FuncSetupWithVerificationShouldConfigureMock()
+             {
+                 var mock = new Mock<VerificationStunt>();
+            
+                 mock.SetupWithVerification(m => m.GetValue(), Times.Once, it => it.Returns(1));
+            
+                 var result = mock.Object.GetValue();
+            
+                 result.Should().Be(1);
+             }
+                ]]></code>
+            </example>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2">
+            <summary>
+                Base to Implement Test Builder on Class complex with subclass
+            </summary>
+            <example>
+            <code><![CDATA[
+            namespace Project.MoqClass.Tests
+            {
+                 using NUnit.Framework;
+                
+                 <summary>
+                    Non-sealed target type.
+                 </summary>
+                 public class User
+                 {
+                     public string LastName { get; set; }
+                 
+                     public string FirstName { get; set; }
+                 }
+                 
+                 /// <summary>
+                 /// Target type test data builder.
+                 /// </summary>
+                 public class UserTestDataBuilder : MoqTestDataBuilder<User, UserTestDataBuilder>
+                 {
+                     public UserTestDataBuilder WithLastName(string lastName)
+                     {
+                         return this.RegisterValueForProperty(x => x.LastName, lastName);
+                     }
+                 
+                     public UserTestDataBuilder WithFirstName(string firstName)
+                     {
+                         return this.RegisterValueForProperty(x => x.FirstName, firstName);
+                     }
+                 }
+                 
+                 [TestFixture]
+                 public class UserTestDataBuilderTests
+                 {
+                     [Test]
+                     public void ComplexMockedObject_Success()
+                     {
+                         // arrange
+                         const string targetLastName = "LastName";
+                 
+                         const string targetFirstName = "FirstName";
+                 
+                         // act
+                         var user = new UserTestDataBuilder()
+                             .WithLastName(targetLastName)
+                             .WithFirstName(targetFirstName)
+                             .Build();
+                 
+                         // assert
+                         Assert.IsNotNull(user);
+                         Assert.AreEqual(targetLastName, user.LastName);
+                         Assert.AreEqual(targetFirstName, user.FirstName);
+                     }
+                 }
+            }
+                ]]></code>
+            </example>
+            <typeparam name="TObject"></typeparam>
+            <typeparam name="TBuilder"></typeparam>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2.RegisterValueForProperty``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},``0)">
+            <summary>
+                Registering in builder for build a series of property of setup MOQ
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="expression"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2.RegisterFlag(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Register a Flag in Setup builder
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2.UpdateSetup(System.Linq.Expressions.BinaryExpression)">
+            <summary>
+                Update with expression a setupe Mock
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2.IsDefaultSetup">
+            <summary>
+                Is a Default Setup of Mock
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2.Build">
+            <summary>
+                Builder of this builder context.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Abstraction.MOQ.VerificationBase`1">
+            <summary>
+                Abstraction for context extension MOQ MoqExtensions.SetupWithVerification type
+            </summary>
+            <typeparam name="TMocked">MOQ context setup to use verification</typeparam>
+        </member>
+        <member name="P:HelperAndToolsForUT.Helper.Abstraction.MOQ.VerificationBase`1.Mock">
+            <summary>
+                MOQ for context setup
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.VerificationBase`1.#ctor(Moq.Mock{`0})">
+            <summary>
+                MOQ base
+            </summary>
+            <param name="mock"></param>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.VerificationBase`1.Verify">
+            <summary>
+                To implement verification
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.MOQ.VerificationBase`1.Dispose">
+            <summary>
+                ~
+            </summary>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Abstraction.IOC.Module">
+            <summary>
+                Abstraction to use for implementation of ModuleBase
+                in context with use on Extensions.IocExtensions.ModuleExtensions
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.IOC.Module.#ctor">
+            <summary>
+                Abstraction to use for implementation of ModuleBase
+                in context with use on Extensions.IocExtensions.ModuleExtensions
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.IOC.Module.Load(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Method to implment a load of services in module
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Abstraction.IOC.Module.Loader``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Loader default implementative of Module
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept.Concept">
+            <summary>
+                A concept provides easy mocking for a given unit, 
+                resulting in an Autofac or Ms Builtin container .net used
+                to resolve the unit that should be tested.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept.Concept.#ctor">
+            <summary>
+                Constructs a new concept.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept.Concept.Builder">
+            <summary>
+                The MS container builder of the concept.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept.Concept.Mock``1">
+            <summary>
+                Stubs the given service type with a mock.
+            </summary>
+            <typeparam name="TService">The type of service to stub.</typeparam>
+            <returns>The resulting mock.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept.Concept.Build">
+            <summary>
+                Builds an Ms Builtin container from the given concept.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`1">
+            <summary>
+                Class concrete implementated From VerificationBase<typeparamref name="TMocked"/>.
+            </summary>
+            <typeparam name="TMocked"></typeparam>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`1.#ctor(System.Linq.Expressions.Expression{System.Action{`0}},System.Func{Moq.Times},Moq.Mock{`0})">
+            <summary>
+                Class concrete implementated From VerificationBase<typeparamref name="TMocked"/>.
+            </summary>
+            <param name="expression"></param>
+            <param name="times"></param>
+            <param name="mock"></param>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`1.Verify">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`2">
+            <summary>
+                Setup with Verification implementated with Class Verification implementate from abstract 
+                VerificationBase<typeparamref name="TMocked"/> and return a <typeparamref name="TReturn"/>
+            </summary>
+            <typeparam name="TMocked"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}},System.Func{Moq.Times},Moq.Mock{`0})">
+            <summary>
+                Use for Setup and verification of MOQ setup
+            </summary>
+            <param name="expression"></param>
+            <param name="times"></param>
+            <param name="mock"></param>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`2.Verify">
+            <summary>
+                On derivated implement a verification case.
+            </summary>
+        </member>
+    </members>
+</doc>

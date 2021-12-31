@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq.Expressions;
+
 using Moq;
 using Moq.Language.Flow;
-using HelperAndToolsForUT.Helper.SetupWithVerification;
 
-namespace HelperAndToolsForUT.Helper.MoqExtensions
+using HelperAndToolsForUT.Helper.MOQ.SetupWithVerification;
+
+namespace HelperAndToolsForUT.Helper.Extensions.MoqExtensions
 {
 
     /// <summary>
@@ -21,7 +23,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         ///     setup and verification
         /// </summary>
         /// <example>
-        /// 
+        /// <code><![CDATA[
         ///  [Fact]
         ///  public void ActionSetupWithVerificationShouldConfigureMock()
         ///  {
@@ -48,7 +50,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         /// 
         ///      result.Should().Be(1);
         ///  }
-        ///  
+        ///     ]]></code>
         /// </example>
         public static Verification<TMocked> SetupWithVerification<TMocked>(this Mock<TMocked> mock, Expression<Action<TMocked>> expression,
             Func<Times> times, Action<ISetup<TMocked>> configureSetup = null) where TMocked : class
@@ -68,7 +70,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         ///     setup and verification
         /// </summary>
         /// <example>
-        /// 
+        /// <code><![CDATA[
         ///  [Fact]
         ///  public void ActionSetupWithVerificationShouldConfigureMock()
         ///  {
@@ -95,7 +97,7 @@ namespace HelperAndToolsForUT.Helper.MoqExtensions
         /// 
         ///      result.Should().Be(1);
         ///  }
-        ///  
+        ///     ]]></code>
         /// </example>
         public static Verification<TMocked, TResult> SetupWithVerification<TMocked, TResult>(this Mock<TMocked> mock,
             Expression<Func<TMocked, TResult>> expression, Func<Times> times, Action<ISetup<TMocked, TResult>> configureSetup = null) where TMocked : class

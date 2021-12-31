@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
 using FluentAssertions;
 using FluentAssertions.Equivalency;
+using Moq;
 
 // ## https://github.com/ronaldbosma/FluentAssertions.ArgumentMatchers.Moq
 
-namespace HelperAndToolsForUT.Helper.MoqExtensions
+namespace HelperAndToolsForUT.Helper.Extensions.MoqExtensions
 {
 
     /// <summary>

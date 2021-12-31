@@ -1,0 +1,1786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.7755" branch-rate="0.46" version="1.9" timestamp="1640946345" lines-covered="394" lines-valid="508" branches-covered="23" branches-valid="50">
+  <sources>
+    <source>C:\Users\carmelo.daniele\</source>
+  </sources>
+  <packages>
+    <package name="HelperAndToolsForTest" line-rate="0.467" branch-rate="0.2647" complexity="63">
+      <classes>
+        <class name="HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`1" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\SetupWithVerification\Verification.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Verify" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="35" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Linq.Expressions.Expression`1&lt;System.Action`1&lt;TMocked&gt;&gt;,System.Func`1&lt;Moq.Times&gt;,Moq.Mock`1&lt;TMocked&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="35" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.MOQ.SetupWithVerification.Verification`2" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\SetupWithVerification\Verification.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Verify" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="64" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;TMocked,TReturn&gt;&gt;,System.Func`1&lt;Moq.Times&gt;,Moq.Mock`1&lt;TMocked&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="55" hits="0" branch="False" />
+                <line number="56" hits="0" branch="False" />
+                <line number="57" hits="0" branch="False" />
+                <line number="58" hits="0" branch="False" />
+                <line number="59" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="64" hits="0" branch="False" />
+            <line number="55" hits="0" branch="False" />
+            <line number="56" hits="0" branch="False" />
+            <line number="57" hits="0" branch="False" />
+            <line number="58" hits="0" branch="False" />
+            <line number="59" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.MOQ.SetupWIthConcept.Concept" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\SetupWIthConceptContainer\Concept.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_Builder" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="37" hits="11" branch="False" />
+              </lines>
+            </method>
+            <method name="Mock" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="45" hits="4" branch="False" />
+                <line number="46" hits="4" branch="False" />
+                <line number="47" hits="4" branch="False" />
+                <line number="48" hits="4" branch="False" />
+                <line number="49" hits="4" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="47" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="50" hits="2" branch="False" />
+                <line number="51" hits="2" branch="False" />
+                <line number="54" hits="2" branch="False" />
+                <line number="63" hits="2" branch="False" />
+                <line number="65" hits="2" branch="False" />
+                <line number="67" hits="2" branch="False" />
+                <line number="69" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="Build" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="87" hits="3" branch="False" />
+                <line number="88" hits="3" branch="False" />
+                <line number="89" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="3" branch="False" />
+                <line number="21" hits="3" branch="False" />
+                <line number="22" hits="3" branch="False" />
+                <line number="23" hits="3" branch="False" />
+                <line number="25" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="37" hits="11" branch="False" />
+            <line number="45" hits="4" branch="False" />
+            <line number="46" hits="4" branch="False" />
+            <line number="47" hits="4" branch="False" />
+            <line number="48" hits="4" branch="False" />
+            <line number="49" hits="4" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="47" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="50" hits="2" branch="False" />
+            <line number="51" hits="2" branch="False" />
+            <line number="54" hits="2" branch="False" />
+            <line number="63" hits="2" branch="False" />
+            <line number="65" hits="2" branch="False" />
+            <line number="67" hits="2" branch="False" />
+            <line number="69" hits="4" branch="False" />
+            <line number="87" hits="3" branch="False" />
+            <line number="88" hits="3" branch="False" />
+            <line number="89" hits="3" branch="False" />
+            <line number="16" hits="3" branch="False" />
+            <line number="21" hits="3" branch="False" />
+            <line number="22" hits="3" branch="False" />
+            <line number="23" hits="3" branch="False" />
+            <line number="25" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Abstraction.IOC.Module" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\IocModule\ModuleBase.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="Load" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="31" hits="4" branch="False" />
+                <line number="32" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="Loader" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="42" hits="4" branch="False" />
+                <line number="43" hits="4" branch="False" />
+                <line number="44" hits="4" branch="False" />
+                <line number="45" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="4" branch="False" />
+                <line number="23" hits="4" branch="False" />
+                <line number="24" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="31" hits="4" branch="False" />
+            <line number="32" hits="4" branch="False" />
+            <line number="42" hits="4" branch="False" />
+            <line number="43" hits="4" branch="False" />
+            <line number="44" hits="4" branch="False" />
+            <line number="45" hits="4" branch="False" />
+            <line number="22" hits="4" branch="False" />
+            <line number="23" hits="4" branch="False" />
+            <line number="24" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\Base\MoqTestDataBuilder.cs" line-rate="0" branch-rate="0" complexity="11">
+          <methods>
+            <method name="RegisterValueForProperty" signature="(System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;TObject,TValue&gt;&gt;,TValue)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="88" hits="0" branch="False" />
+                <line number="89" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="13" type="jump" coverage="0%" />
+                    <condition number="39" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="90" hits="0" branch="False" />
+                <line number="91" hits="0" branch="False" />
+                <line number="94" hits="0" branch="False" />
+                <line number="95" hits="0" branch="False" />
+                <line number="96" hits="0" branch="False" />
+                <line number="98" hits="0" branch="False" />
+                <line number="99" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="RegisterFlag" signature="(System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;TObject,System.Boolean&gt;&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="107" hits="0" branch="False" />
+                <line number="108" hits="0" branch="False" />
+                <line number="109" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="UpdateSetup" signature="(System.Linq.Expressions.BinaryExpression)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="117" hits="0" branch="False" />
+                <line number="118" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="8" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="119" hits="0" branch="False" />
+                <line number="120" hits="0" branch="False" />
+                <line number="122" hits="0" branch="False" />
+                <line number="123" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="IsDefaultSetup" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="130" hits="0" branch="False" />
+                <line number="131" hits="0" branch="False" />
+                <line number="132" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Build" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="139" hits="0" branch="False" />
+                <line number="140" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="141" hits="0" branch="False" />
+                <line number="142" hits="0" branch="False" />
+                <line number="143" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="76" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="88" hits="0" branch="False" />
+            <line number="89" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="13" type="jump" coverage="0%" />
+                <condition number="39" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="90" hits="0" branch="False" />
+            <line number="91" hits="0" branch="False" />
+            <line number="94" hits="0" branch="False" />
+            <line number="95" hits="0" branch="False" />
+            <line number="96" hits="0" branch="False" />
+            <line number="98" hits="0" branch="False" />
+            <line number="99" hits="0" branch="False" />
+            <line number="107" hits="0" branch="False" />
+            <line number="108" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
+            <line number="117" hits="0" branch="False" />
+            <line number="118" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="8" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="119" hits="0" branch="False" />
+            <line number="120" hits="0" branch="False" />
+            <line number="122" hits="0" branch="False" />
+            <line number="123" hits="0" branch="False" />
+            <line number="130" hits="0" branch="False" />
+            <line number="131" hits="0" branch="False" />
+            <line number="132" hits="0" branch="False" />
+            <line number="139" hits="0" branch="False" />
+            <line number="140" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="141" hits="0" branch="False" />
+            <line number="142" hits="0" branch="False" />
+            <line number="143" hits="0" branch="False" />
+            <line number="76" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Abstraction.MOQ.VerificationBase`1" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\SetupWithVerification\VerificationBaseT.cs" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="get_Mock" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Dispose" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="38" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Moq.Mock`1&lt;TMocked&gt;)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="11" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="28" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="11" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="28" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqOrderAndNotifyExtensions" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\Base\MoqExtensions.cs" line-rate="0" branch-rate="0" complexity="7">
+          <methods>
+            <method name="ReturnsInOrder" signature="(Moq.Language.Flow.ISetup`2&lt;T,TResult&gt;,TResult[])" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ReturnsInOrder" signature="(Moq.Language.Flow.ISetup`2&lt;T,TResult&gt;,System.Object[])" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="53" hits="0" branch="False" />
+                <line number="54" hits="0" branch="False" />
+                <line number="55" hits="0" branch="False" />
+                <line number="56" hits="0" branch="False" />
+                <line number="57" hits="0" branch="False" />
+                <line number="58" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="24" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="59" hits="0" branch="False" />
+                <line number="60" hits="0" branch="False" />
+                <line number="61" hits="0" branch="False" />
+                <line number="62" hits="0" branch="False" />
+                <line number="63" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="NotifyPropertyChanged" signature="(Moq.Mock`1&lt;T&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;T,TResult&gt;&gt;,TResult)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="132" hits="0" branch="False" />
+                <line number="133" hits="0" branch="False" />
+                <line number="134" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="19" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="136" hits="0" branch="False" />
+                <line number="138" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="53" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="140" hits="0" branch="False" />
+                <line number="141" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="53" hits="0" branch="False" />
+            <line number="54" hits="0" branch="False" />
+            <line number="55" hits="0" branch="False" />
+            <line number="56" hits="0" branch="False" />
+            <line number="57" hits="0" branch="False" />
+            <line number="58" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="24" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="59" hits="0" branch="False" />
+            <line number="60" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
+            <line number="62" hits="0" branch="False" />
+            <line number="63" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
+            <line number="132" hits="0" branch="False" />
+            <line number="133" hits="0" branch="False" />
+            <line number="134" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="19" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="136" hits="0" branch="False" />
+            <line number="138" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="53" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="140" hits="0" branch="False" />
+            <line number="141" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Extensions.MoqExtensions.Its" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\FluentAssertions\MoqMathFluentExtensions.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="EquivalentTo" signature="(TValue)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="24" hits="9" branch="False" />
+                <line number="25" hits="15" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="8" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="26" hits="9" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo" signature="(TValue,System.Func`2&lt;FluentAssertions.Equivalency.EquivalencyAssertionOptions`1&lt;TValue&gt;,FluentAssertions.Equivalency.EquivalencyAssertionOptions`1&lt;TValue&gt;&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="42" hits="10" branch="False" />
+                <line number="43" hits="10" branch="False" />
+                <line number="44" hits="7" branch="False" />
+                <line number="45" hits="10" branch="False" />
+                <line number="46" hits="10" branch="False" />
+                <line number="47" hits="10" branch="False" />
+                <line number="48" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="AreEquivalent" signature="(TValue,TValue,System.Func`2&lt;FluentAssertions.Equivalency.EquivalencyAssertionOptions`1&lt;TValue&gt;,FluentAssertions.Equivalency.EquivalencyAssertionOptions`1&lt;TValue&gt;&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="65" hits="7" branch="False" />
+                <line number="67" hits="7" branch="False" />
+                <line number="68" hits="7" branch="False" />
+                <line number="69" hits="4" branch="False" />
+                <line number="71" hits="3" branch="False" />
+                <line number="72" hits="3" branch="False" />
+                <line number="77" hits="3" branch="False" />
+                <line number="78" hits="3" branch="False" />
+                <line number="79" hits="3" branch="False" />
+                <line number="81" hits="7" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="9" branch="False" />
+            <line number="25" hits="15" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="8" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="26" hits="9" branch="False" />
+            <line number="42" hits="10" branch="False" />
+            <line number="43" hits="10" branch="False" />
+            <line number="44" hits="7" branch="False" />
+            <line number="45" hits="10" branch="False" />
+            <line number="46" hits="10" branch="False" />
+            <line number="47" hits="10" branch="False" />
+            <line number="48" hits="10" branch="False" />
+            <line number="65" hits="7" branch="False" />
+            <line number="67" hits="7" branch="False" />
+            <line number="68" hits="7" branch="False" />
+            <line number="69" hits="4" branch="False" />
+            <line number="71" hits="3" branch="False" />
+            <line number="72" hits="3" branch="False" />
+            <line number="77" hits="3" branch="False" />
+            <line number="78" hits="3" branch="False" />
+            <line number="79" hits="3" branch="False" />
+            <line number="81" hits="7" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockAsyncCaptureExtensions" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\SetupWIthConceptContainer\MoqAsyncExtension.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="Capture" signature="(Moq.Language.ICallback`2&lt;TMock,System.Threading.Tasks.Task&gt;,System.Collections.Generic.List`1&lt;T1&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="4" branch="False" />
+                <line number="27" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Capture" signature="(Moq.Language.ICallback`2&lt;TMock,System.Threading.Tasks.Task&gt;,System.Collections.Generic.List`1&lt;System.Tuple`2&lt;T1,T2&gt;&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="4" branch="False" />
+                <line number="42" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Capture" signature="(Moq.Language.ICallback`2&lt;TMock,System.Threading.Tasks.Task&gt;,System.Collections.Generic.List`1&lt;T1&gt;,System.Collections.Generic.List`1&lt;T2&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="56" hits="1" branch="False" />
+                <line number="57" hits="1" branch="False" />
+                <line number="58" hits="3" branch="False" />
+                <line number="59" hits="3" branch="False" />
+                <line number="60" hits="3" branch="False" />
+                <line number="61" hits="4" branch="False" />
+                <line number="62" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="4" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="4" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="57" hits="1" branch="False" />
+            <line number="58" hits="3" branch="False" />
+            <line number="59" hits="3" branch="False" />
+            <line number="60" hits="3" branch="False" />
+            <line number="61" hits="4" branch="False" />
+            <line number="62" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MockCaptureExtensions" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\SetupWIthConceptContainer\MoqExtension.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="Capture" signature="(Moq.Language.ICallback,System.Collections.Generic.List`1&lt;T1&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="4" branch="False" />
+                <line number="25" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Capture" signature="(Moq.Language.ICallback,System.Collections.Generic.List`1&lt;System.Tuple`2&lt;T1,T2&gt;&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="4" branch="False" />
+                <line number="38" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Capture" signature="(Moq.Language.ICallback,System.Collections.Generic.List`1&lt;T1&gt;,System.Collections.Generic.List`1&lt;T2&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="50" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="52" hits="3" branch="False" />
+                <line number="53" hits="3" branch="False" />
+                <line number="54" hits="3" branch="False" />
+                <line number="55" hits="4" branch="False" />
+                <line number="56" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="4" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="4" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="52" hits="3" branch="False" />
+            <line number="53" hits="3" branch="False" />
+            <line number="54" hits="3" branch="False" />
+            <line number="55" hits="4" branch="False" />
+            <line number="56" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Extensions.MoqExtensions.MoqExtensions" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\SetupWithVerification\MoqExtension.cs" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="SetupWithVerification" signature="(Moq.Mock`1&lt;TMocked&gt;,System.Linq.Expressions.Expression`1&lt;System.Action`1&lt;TMocked&gt;&gt;,System.Func`1&lt;Moq.Times&gt;,System.Action`1&lt;Moq.Language.Flow.ISetup`1&lt;TMocked&gt;&gt;)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="57" hits="0" branch="False" />
+                <line number="58" hits="0" branch="False" />
+                <line number="60" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="62" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
+                <line number="65" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="SetupWithVerification" signature="(Moq.Mock`1&lt;TMocked&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;TMocked,TResult&gt;&gt;,System.Func`1&lt;Moq.Times&gt;,System.Action`1&lt;Moq.Language.Flow.ISetup`2&lt;TMocked,TResult&gt;&gt;)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="104" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+                <line number="107" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="109" hits="0" branch="False" />
+                <line number="111" hits="0" branch="False" />
+                <line number="112" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="57" hits="0" branch="False" />
+            <line number="58" hits="0" branch="False" />
+            <line number="60" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="62" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
+            <line number="65" hits="0" branch="False" />
+            <line number="104" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
+            <line number="107" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="109" hits="0" branch="False" />
+            <line number="111" hits="0" branch="False" />
+            <line number="112" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Extensions.IocExtensions.DiExtensions" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\Base\DIExtensions.cs" line-rate="1" branch-rate="0.8332999999999999" complexity="6">
+          <methods>
+            <method name="RegisterAsImplementedInterfaces" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime)" line-rate="1" branch-rate="0.8332999999999999" complexity="6">
+              <lines>
+                <line number="28" hits="3" branch="False" />
+                <line number="31" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="27" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="32" hits="9" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="34" hits="21" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="105" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="35" hits="6" branch="False" />
+                <line number="36" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="28" hits="3" branch="False" />
+            <line number="31" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="27" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="32" hits="9" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="16" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="34" hits="21" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="105" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="35" hits="6" branch="False" />
+            <line number="36" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Extensions.IocExtensions.ModuleExtensions" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\IocModule\IocModuleExtensions.cs" line-rate="0.7272" branch-rate="1" complexity="3">
+          <methods>
+            <method name="RegisterModule" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,T)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="RegisterModule" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="35" hits="3" branch="False" />
+                <line number="36" hits="3" branch="False" />
+                <line number="37" hits="3" branch="False" />
+                <line number="38" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="RegisterModule" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func`2&lt;Microsoft.Extensions.DependencyInjection.IServiceCollection,T&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="48" hits="1" branch="False" />
+                <line number="49" hits="1" branch="False" />
+                <line number="50" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="35" hits="3" branch="False" />
+            <line number="36" hits="3" branch="False" />
+            <line number="37" hits="3" branch="False" />
+            <line number="38" hits="3" branch="False" />
+            <line number="48" hits="1" branch="False" />
+            <line number="49" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Utils.ContextIOSystem" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\Base\ContextIOSystem.cs" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="CheckKeywordsExist" signature="(System.String,System.String[])" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="75" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="55" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="75" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="55" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Common.AssemblySetup" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest\AssemblySetup.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="AssemblyInitialize" signature="(NUnit.Framework.TestContext)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="PrintAssemblyVersion" signature="(System.Reflection.Assembly)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="22" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="HelperAndToolsForTest.Test" line-rate="0.971" branch-rate="0.875" complexity="53">
+      <classes>
+        <class name="AutoGeneratedProgram" filename=".nuget\packages\microsoft.net.test.sdk\17.1.0-preview-20211130-02\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Main" signature="(System.String[])" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForTest.Test.Tests" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\UnitTest1.cs" line-rate="0.8" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Setup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="False" />
+                <line number="10" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Test1" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="False" />
+            <line number="10" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.SetupWIthConcept.Test.StringService" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\SetupWIthConceptContainer\TestSetupWithConcept.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="GetString" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="32" hits="3" branch="False" />
+                <line number="33" hits="3" branch="False" />
+                <line number="34" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="32" hits="3" branch="False" />
+            <line number="33" hits="3" branch="False" />
+            <line number="34" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.SetupWIthConcept.Test.Fixture" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\SetupWIthConceptContainer\TestSetupWithConcept.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="GetCombinedStrings" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="68" hits="2" branch="False" />
+                <line number="69" hits="2" branch="False" />
+                <line number="70" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(HelperAndToolsForUT.Helper.SetupWIthConcept.Test.IStringService,HelperAndToolsForUT.Helper.SetupWIthConcept.Test.IOtherStringService)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="59" hits="2" branch="False" />
+                <line number="60" hits="2" branch="False" />
+                <line number="61" hits="2" branch="False" />
+                <line number="62" hits="2" branch="False" />
+                <line number="63" hits="2" branch="False" />
+                <line number="64" hits="2" branch="False" />
+                <line number="65" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="68" hits="2" branch="False" />
+            <line number="69" hits="2" branch="False" />
+            <line number="70" hits="2" branch="False" />
+            <line number="59" hits="2" branch="False" />
+            <line number="60" hits="2" branch="False" />
+            <line number="61" hits="2" branch="False" />
+            <line number="62" hits="2" branch="False" />
+            <line number="63" hits="2" branch="False" />
+            <line number="64" hits="2" branch="False" />
+            <line number="65" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.SetupWIthConcept.Test.ConceptTests" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\SetupWIthConceptContainer\TestSetupWithConcept.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="102" hits="3" branch="False" />
+                <line number="103" hits="3" branch="False" />
+                <line number="105" hits="3" branch="False" />
+                <line number="108" hits="3" branch="False" />
+                <line number="110" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="ShouldDisplayNormalBehaviorWhenNotMocked" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="114" hits="1" branch="False" />
+                <line number="115" hits="1" branch="False" />
+                <line number="116" hits="1" branch="False" />
+                <line number="121" hits="1" branch="False" />
+                <line number="122" hits="1" branch="False" />
+                <line number="123" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="ShouldBeAbleToStubOutServices" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="127" hits="1" branch="False" />
+                <line number="128" hits="1" branch="False" />
+                <line number="129" hits="1" branch="False" />
+                <line number="130" hits="1" branch="False" />
+                <line number="132" hits="1" branch="False" />
+                <line number="133" hits="1" branch="False" />
+                <line number="138" hits="1" branch="False" />
+                <line number="144" hits="1" branch="False" />
+                <line number="146" hits="1" branch="False" />
+                <line number="147" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="ShouldStubOutServicesAsSingletons" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="151" hits="1" branch="False" />
+                <line number="152" hits="1" branch="False" />
+                <line number="154" hits="1" branch="False" />
+                <line number="155" hits="1" branch="False" />
+                <line number="161" hits="1" branch="False" />
+                <line number="162" hits="1" branch="False" />
+                <line number="164" hits="1" branch="False" />
+                <line number="165" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="102" hits="3" branch="False" />
+            <line number="103" hits="3" branch="False" />
+            <line number="105" hits="3" branch="False" />
+            <line number="108" hits="3" branch="False" />
+            <line number="110" hits="3" branch="False" />
+            <line number="114" hits="1" branch="False" />
+            <line number="115" hits="1" branch="False" />
+            <line number="116" hits="1" branch="False" />
+            <line number="121" hits="1" branch="False" />
+            <line number="122" hits="1" branch="False" />
+            <line number="123" hits="1" branch="False" />
+            <line number="127" hits="1" branch="False" />
+            <line number="128" hits="1" branch="False" />
+            <line number="129" hits="1" branch="False" />
+            <line number="130" hits="1" branch="False" />
+            <line number="132" hits="1" branch="False" />
+            <line number="133" hits="1" branch="False" />
+            <line number="138" hits="1" branch="False" />
+            <line number="144" hits="1" branch="False" />
+            <line number="146" hits="1" branch="False" />
+            <line number="147" hits="1" branch="False" />
+            <line number="151" hits="1" branch="False" />
+            <line number="152" hits="1" branch="False" />
+            <line number="154" hits="1" branch="False" />
+            <line number="155" hits="1" branch="False" />
+            <line number="161" hits="1" branch="False" />
+            <line number="162" hits="1" branch="False" />
+            <line number="164" hits="1" branch="False" />
+            <line number="165" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.SetupWIthConcept.Test.MockAsyncCaptureExtensionsTests" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\SetupWIthConceptContainer\TestSetupWithConcept.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="ShouldBeAbleToCaptureTwoParameterMethodArgumentsAsLists" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="230" hits="1" branch="False" />
+                <line number="231" hits="1" branch="False" />
+                <line number="232" hits="1" branch="False" />
+                <line number="233" hits="1" branch="False" />
+                <line number="234" hits="1" branch="False" />
+                <line number="235" hits="1" branch="False" />
+                <line number="236" hits="1" branch="False" />
+                <line number="238" hits="1" branch="False" />
+                <line number="239" hits="1" branch="False" />
+                <line number="240" hits="1" branch="False" />
+                <line number="241" hits="1" branch="False" />
+                <line number="242" hits="1" branch="False" />
+                <line number="243" hits="1" branch="False" />
+                <line number="245" hits="1" branch="False" />
+                <line number="247" hits="1" branch="False" />
+                <line number="248" hits="1" branch="False" />
+                <line number="249" hits="1" branch="False" />
+                <line number="250" hits="1" branch="False" />
+                <line number="251" hits="1" branch="False" />
+                <line number="253" hits="8" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="252" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="254" hits="3" branch="False" />
+                <line number="255" hits="3" branch="False" />
+                <line number="256" hits="3" branch="False" />
+                <line number="258" hits="1" branch="False" />
+                <line number="259" hits="1" branch="False" />
+                <line number="260" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="230" hits="1" branch="False" />
+            <line number="231" hits="1" branch="False" />
+            <line number="232" hits="1" branch="False" />
+            <line number="233" hits="1" branch="False" />
+            <line number="234" hits="1" branch="False" />
+            <line number="235" hits="1" branch="False" />
+            <line number="236" hits="1" branch="False" />
+            <line number="238" hits="1" branch="False" />
+            <line number="239" hits="1" branch="False" />
+            <line number="240" hits="1" branch="False" />
+            <line number="241" hits="1" branch="False" />
+            <line number="242" hits="1" branch="False" />
+            <line number="243" hits="1" branch="False" />
+            <line number="245" hits="1" branch="False" />
+            <line number="247" hits="1" branch="False" />
+            <line number="248" hits="1" branch="False" />
+            <line number="249" hits="1" branch="False" />
+            <line number="250" hits="1" branch="False" />
+            <line number="251" hits="1" branch="False" />
+            <line number="253" hits="8" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="252" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="254" hits="3" branch="False" />
+            <line number="255" hits="3" branch="False" />
+            <line number="256" hits="3" branch="False" />
+            <line number="258" hits="1" branch="False" />
+            <line number="259" hits="1" branch="False" />
+            <line number="260" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.SetupWIthConcept.Test.MockAsyncCaptureExtensionsTests/&lt;ShouldBeAbleToCaptureSingleParameterMethodArguments&gt;d__0" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\SetupWIthConceptContainer\TestSetupWithConcept.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="178" hits="1" branch="False" />
+                <line number="179" hits="1" branch="False" />
+                <line number="180" hits="1" branch="False" />
+                <line number="181" hits="1" branch="False" />
+                <line number="182" hits="1" branch="False" />
+                <line number="183" hits="1" branch="False" />
+                <line number="184" hits="1" branch="False" />
+                <line number="186" hits="1" branch="False" />
+                <line number="188" hits="1" branch="False" />
+                <line number="189" hits="1" branch="False" />
+                <line number="190" hits="1" branch="False" />
+                <line number="191" hits="1" branch="False" />
+                <line number="192" hits="1" branch="False" />
+                <line number="194" hits="9" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="394" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="195" hits="3" branch="False" />
+                <line number="196" hits="3" branch="False" />
+                <line number="197" hits="3" branch="False" />
+                <line number="199" hits="1" branch="False" />
+                <line number="200" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="178" hits="1" branch="False" />
+            <line number="179" hits="1" branch="False" />
+            <line number="180" hits="1" branch="False" />
+            <line number="181" hits="1" branch="False" />
+            <line number="182" hits="1" branch="False" />
+            <line number="183" hits="1" branch="False" />
+            <line number="184" hits="1" branch="False" />
+            <line number="186" hits="1" branch="False" />
+            <line number="188" hits="1" branch="False" />
+            <line number="189" hits="1" branch="False" />
+            <line number="190" hits="1" branch="False" />
+            <line number="191" hits="1" branch="False" />
+            <line number="192" hits="1" branch="False" />
+            <line number="194" hits="9" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="394" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="195" hits="3" branch="False" />
+            <line number="196" hits="3" branch="False" />
+            <line number="197" hits="3" branch="False" />
+            <line number="199" hits="1" branch="False" />
+            <line number="200" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.SetupWIthConcept.Test.MockAsyncCaptureExtensionsTests/&lt;ShouldBeAbleToCaptureTwoParameterMethodArgumentsAsTuples&gt;d__1" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\SetupWIthConceptContainer\TestSetupWithConcept.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="204" hits="1" branch="False" />
+                <line number="205" hits="1" branch="False" />
+                <line number="206" hits="1" branch="False" />
+                <line number="207" hits="1" branch="False" />
+                <line number="208" hits="1" branch="False" />
+                <line number="209" hits="1" branch="False" />
+                <line number="210" hits="1" branch="False" />
+                <line number="212" hits="1" branch="False" />
+                <line number="214" hits="1" branch="False" />
+                <line number="215" hits="1" branch="False" />
+                <line number="216" hits="1" branch="False" />
+                <line number="217" hits="1" branch="False" />
+                <line number="218" hits="1" branch="False" />
+                <line number="220" hits="9" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="460" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="221" hits="3" branch="False" />
+                <line number="222" hits="3" branch="False" />
+                <line number="223" hits="3" branch="False" />
+                <line number="225" hits="1" branch="False" />
+                <line number="226" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="204" hits="1" branch="False" />
+            <line number="205" hits="1" branch="False" />
+            <line number="206" hits="1" branch="False" />
+            <line number="207" hits="1" branch="False" />
+            <line number="208" hits="1" branch="False" />
+            <line number="209" hits="1" branch="False" />
+            <line number="210" hits="1" branch="False" />
+            <line number="212" hits="1" branch="False" />
+            <line number="214" hits="1" branch="False" />
+            <line number="215" hits="1" branch="False" />
+            <line number="216" hits="1" branch="False" />
+            <line number="217" hits="1" branch="False" />
+            <line number="218" hits="1" branch="False" />
+            <line number="220" hits="9" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="460" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="221" hits="3" branch="False" />
+            <line number="222" hits="3" branch="False" />
+            <line number="223" hits="3" branch="False" />
+            <line number="225" hits="1" branch="False" />
+            <line number="226" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.SetupWIthConcept.Test.MockCaptureExtensionsTests" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\SetupWIthConceptContainer\TestSetupWithConcept.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="ShouldBeAbleToCaptureSingleParameterMethodArguments" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="272" hits="1" branch="False" />
+                <line number="273" hits="1" branch="False" />
+                <line number="274" hits="1" branch="False" />
+                <line number="275" hits="1" branch="False" />
+                <line number="276" hits="1" branch="False" />
+                <line number="277" hits="1" branch="False" />
+                <line number="278" hits="1" branch="False" />
+                <line number="280" hits="1" branch="False" />
+                <line number="282" hits="1" branch="False" />
+                <line number="283" hits="1" branch="False" />
+                <line number="284" hits="1" branch="False" />
+                <line number="285" hits="1" branch="False" />
+                <line number="287" hits="9" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="193" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="288" hits="3" branch="False" />
+                <line number="289" hits="3" branch="False" />
+                <line number="290" hits="3" branch="False" />
+                <line number="292" hits="1" branch="False" />
+                <line number="293" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="ShouldBeAbleToCaptureTwoParameterMethodArgumentsAsTuples" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="297" hits="1" branch="False" />
+                <line number="298" hits="1" branch="False" />
+                <line number="299" hits="1" branch="False" />
+                <line number="300" hits="1" branch="False" />
+                <line number="301" hits="1" branch="False" />
+                <line number="302" hits="1" branch="False" />
+                <line number="303" hits="1" branch="False" />
+                <line number="305" hits="1" branch="False" />
+                <line number="307" hits="1" branch="False" />
+                <line number="308" hits="1" branch="False" />
+                <line number="309" hits="1" branch="False" />
+                <line number="310" hits="1" branch="False" />
+                <line number="312" hits="9" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="255" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="313" hits="3" branch="False" />
+                <line number="314" hits="3" branch="False" />
+                <line number="315" hits="3" branch="False" />
+                <line number="317" hits="1" branch="False" />
+                <line number="318" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="ShouldBeAbleToCaptureTwoParameterMethodArgumentsAsLists" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="322" hits="1" branch="False" />
+                <line number="323" hits="1" branch="False" />
+                <line number="324" hits="1" branch="False" />
+                <line number="325" hits="1" branch="False" />
+                <line number="326" hits="1" branch="False" />
+                <line number="327" hits="1" branch="False" />
+                <line number="328" hits="1" branch="False" />
+                <line number="330" hits="1" branch="False" />
+                <line number="331" hits="1" branch="False" />
+                <line number="332" hits="1" branch="False" />
+                <line number="333" hits="1" branch="False" />
+                <line number="334" hits="1" branch="False" />
+                <line number="335" hits="1" branch="False" />
+                <line number="337" hits="1" branch="False" />
+                <line number="339" hits="1" branch="False" />
+                <line number="340" hits="1" branch="False" />
+                <line number="341" hits="1" branch="False" />
+                <line number="342" hits="1" branch="False" />
+                <line number="343" hits="1" branch="False" />
+                <line number="345" hits="8" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="252" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="346" hits="3" branch="False" />
+                <line number="347" hits="3" branch="False" />
+                <line number="348" hits="3" branch="False" />
+                <line number="350" hits="1" branch="False" />
+                <line number="351" hits="1" branch="False" />
+                <line number="352" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="272" hits="1" branch="False" />
+            <line number="273" hits="1" branch="False" />
+            <line number="274" hits="1" branch="False" />
+            <line number="275" hits="1" branch="False" />
+            <line number="276" hits="1" branch="False" />
+            <line number="277" hits="1" branch="False" />
+            <line number="278" hits="1" branch="False" />
+            <line number="280" hits="1" branch="False" />
+            <line number="282" hits="1" branch="False" />
+            <line number="283" hits="1" branch="False" />
+            <line number="284" hits="1" branch="False" />
+            <line number="285" hits="1" branch="False" />
+            <line number="287" hits="9" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="193" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="288" hits="3" branch="False" />
+            <line number="289" hits="3" branch="False" />
+            <line number="290" hits="3" branch="False" />
+            <line number="292" hits="1" branch="False" />
+            <line number="293" hits="1" branch="False" />
+            <line number="297" hits="1" branch="False" />
+            <line number="298" hits="1" branch="False" />
+            <line number="299" hits="1" branch="False" />
+            <line number="300" hits="1" branch="False" />
+            <line number="301" hits="1" branch="False" />
+            <line number="302" hits="1" branch="False" />
+            <line number="303" hits="1" branch="False" />
+            <line number="305" hits="1" branch="False" />
+            <line number="307" hits="1" branch="False" />
+            <line number="308" hits="1" branch="False" />
+            <line number="309" hits="1" branch="False" />
+            <line number="310" hits="1" branch="False" />
+            <line number="312" hits="9" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="255" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="313" hits="3" branch="False" />
+            <line number="314" hits="3" branch="False" />
+            <line number="315" hits="3" branch="False" />
+            <line number="317" hits="1" branch="False" />
+            <line number="318" hits="1" branch="False" />
+            <line number="322" hits="1" branch="False" />
+            <line number="323" hits="1" branch="False" />
+            <line number="324" hits="1" branch="False" />
+            <line number="325" hits="1" branch="False" />
+            <line number="326" hits="1" branch="False" />
+            <line number="327" hits="1" branch="False" />
+            <line number="328" hits="1" branch="False" />
+            <line number="330" hits="1" branch="False" />
+            <line number="331" hits="1" branch="False" />
+            <line number="332" hits="1" branch="False" />
+            <line number="333" hits="1" branch="False" />
+            <line number="334" hits="1" branch="False" />
+            <line number="335" hits="1" branch="False" />
+            <line number="337" hits="1" branch="False" />
+            <line number="339" hits="1" branch="False" />
+            <line number="340" hits="1" branch="False" />
+            <line number="341" hits="1" branch="False" />
+            <line number="342" hits="1" branch="False" />
+            <line number="343" hits="1" branch="False" />
+            <line number="345" hits="8" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="252" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="346" hits="3" branch="False" />
+            <line number="347" hits="3" branch="False" />
+            <line number="348" hits="3" branch="False" />
+            <line number="350" hits="1" branch="False" />
+            <line number="351" hits="1" branch="False" />
+            <line number="352" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.ModuleExtensionsTests" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\IocModuleTest.cs" line-rate="0.9166" branch-rate="0.5" complexity="4">
+          <methods>
+            <method name="RegisterModule_WithNestedModules_AllDependenciesAreRegistered" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+                <line number="33" hits="1" branch="False" />
+                <line number="35" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+                <line number="38" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="RegisterModule_WhenAFactoryFunctionIsInvoked_AModuleIsRegistered" signature="()" line-rate="0.8332999999999999" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="42" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="24" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="49" hits="1" branch="False" />
+                <line number="50" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="57" hits="2" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="RegisterModule_WhenCalled_PreviousRegistrationsArePresent" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="66" hits="1" branch="False" />
+                <line number="67" hits="1" branch="False" />
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="1" branch="False" />
+                <line number="70" hits="1" branch="False" />
+                <line number="71" hits="1" branch="False" />
+                <line number="72" hits="1" branch="False" />
+                <line number="73" hits="2" branch="False" />
+                <line number="74" hits="2" branch="False" />
+                <line number="75" hits="1" branch="False" />
+                <line number="76" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="33" hits="1" branch="False" />
+            <line number="35" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="38" hits="2" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="24" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="49" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="57" hits="2" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="2" branch="False" />
+            <line number="66" hits="1" branch="False" />
+            <line number="67" hits="1" branch="False" />
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
+            <line number="71" hits="1" branch="False" />
+            <line number="72" hits="1" branch="False" />
+            <line number="73" hits="2" branch="False" />
+            <line number="74" hits="2" branch="False" />
+            <line number="75" hits="1" branch="False" />
+            <line number="76" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.BaseTests.InnerModule" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\BaseTests\InnerModule.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Load" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.BaseTests.OuterModule" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\BaseTests\OuterModule.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Load" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.BaseTests.ParameterizedModule" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\BaseTests\ParametrizedModule.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Load" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(HelperAndToolsForUT.Helper.Test.IocModule.IService)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.BaseTests.Service2Impl1" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\BaseTests\Service2Impl.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Message" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(HelperAndToolsForUT.Helper.Test.IocModule.IService)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="False" />
+                <line number="10" hits="1" branch="False" />
+                <line number="11" hits="1" branch="False" />
+                <line number="12" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="1" branch="False" />
+            <line number="9" hits="1" branch="False" />
+            <line number="10" hits="1" branch="False" />
+            <line number="11" hits="1" branch="False" />
+            <line number="12" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.BaseTests.ServiceImpl1" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\BaseTests\ServiceImpl1.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Message" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.BaseTests.ServiceImpl2" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\BaseTests\ServiceImpl2.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Message" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.IocModule.BaseTests.TestModule" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\IoCModule\BaseTests\TestModule.cs" line-rate="1" branch-rate="0.5" complexity="2">
+          <methods>
+            <method name="Load" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="7" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="47" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="17" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="7" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="47" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="17" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.FluentAssertions.ItsTests" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\FluentAssertions\TestFluentAssertions.cs" line-rate="1" branch-rate="1" complexity="8">
+          <methods>
+            <method name="TestInitialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="7" branch="False" />
+                <line number="25" hits="7" branch="False" />
+                <line number="26" hits="7" branch="False" />
+                <line number="27" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo_Matches_Same_Complex_Types" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo_Matches_Two_Different_Complex_Types_With_Same_Data" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="41" hits="1" branch="False" />
+                <line number="42" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="47" hits="1" branch="False" />
+                <line number="48" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo_Does_Not_Match_Two_Complex_Types_If_Child_Property_Has_Different_Value" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="52" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="60" hits="2" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo_Matches_Two_Complex_Types_If_Child_Property_Has_Different_Value_But_Its_Ignored" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="66" hits="1" branch="False" />
+                <line number="67" hits="1" branch="False" />
+                <line number="69" hits="1" branch="False" />
+                <line number="70" hits="1" branch="False" />
+                <line number="72" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="75" hits="1" branch="False" />
+                <line number="76" hits="1" branch="False" />
+                <line number="77" hits="1" branch="False" />
+                <line number="78" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo_Matches_If_Actual_And_Expected_Are_Null" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="82" hits="1" branch="False" />
+                <line number="83" hits="1" branch="False" />
+                <line number="85" hits="1" branch="False" />
+                <line number="86" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo_Does_Not_Match_If_Actual_Object_Has_Value_And_Expected_Object_Is_Null" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="90" hits="1" branch="False" />
+                <line number="91" hits="1" branch="False" />
+                <line number="93" hits="1" branch="False" />
+                <line number="95" hits="2" branch="False" />
+                <line number="96" hits="1" branch="False" />
+                <line number="97" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="EquivalentTo_Does_Not_Match_If_Actual_Object_Is_Null_And_Expected_Object_Has_Value" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="101" hits="1" branch="False" />
+                <line number="102" hits="1" branch="False" />
+                <line number="104" hits="1" branch="False" />
+                <line number="106" hits="2" branch="False" />
+                <line number="107" hits="1" branch="False" />
+                <line number="108" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="7" branch="False" />
+            <line number="25" hits="7" branch="False" />
+            <line number="26" hits="7" branch="False" />
+            <line number="27" hits="7" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+            <line number="47" hits="1" branch="False" />
+            <line number="48" hits="1" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="60" hits="2" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="66" hits="1" branch="False" />
+            <line number="67" hits="1" branch="False" />
+            <line number="69" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
+            <line number="72" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="75" hits="1" branch="False" />
+            <line number="76" hits="1" branch="False" />
+            <line number="77" hits="1" branch="False" />
+            <line number="78" hits="1" branch="False" />
+            <line number="82" hits="1" branch="False" />
+            <line number="83" hits="1" branch="False" />
+            <line number="85" hits="1" branch="False" />
+            <line number="86" hits="1" branch="False" />
+            <line number="90" hits="1" branch="False" />
+            <line number="91" hits="1" branch="False" />
+            <line number="93" hits="1" branch="False" />
+            <line number="95" hits="2" branch="False" />
+            <line number="96" hits="1" branch="False" />
+            <line number="97" hits="1" branch="False" />
+            <line number="101" hits="1" branch="False" />
+            <line number="102" hits="1" branch="False" />
+            <line number="104" hits="1" branch="False" />
+            <line number="106" hits="2" branch="False" />
+            <line number="107" hits="1" branch="False" />
+            <line number="108" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.FluentAssertions.Tools.Punctuation" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\FluentAssertions\TestTools.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="AddExclamationPoint" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.FluentAssertions.Tools.ComplexType" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\FluentAssertions\TestTools.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="get_IntProperty" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="get_StringProperty" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="30" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="get_GuidProperty" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="32" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ComplexTypeProperty" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="34" hits="25" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ListProperty" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="Copy" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="46" hits="3" branch="False" />
+                <line number="47" hits="3" branch="False" />
+                <line number="48" hits="3" branch="False" />
+                <line number="49" hits="3" branch="False" />
+                <line number="50" hits="3" branch="False" />
+                <line number="51" hits="3" branch="False" />
+                <line number="52" hits="3" branch="False" />
+                <line number="53" hits="3" branch="False" />
+                <line number="54" hits="3" branch="False" />
+                <line number="55" hits="3" branch="False" />
+                <line number="56" hits="3" branch="False" />
+                <line number="57" hits="9" branch="False" />
+                <line number="58" hits="3" branch="False" />
+                <line number="59" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="28" hits="20" branch="False" />
+            <line number="30" hits="20" branch="False" />
+            <line number="32" hits="20" branch="False" />
+            <line number="34" hits="25" branch="False" />
+            <line number="36" hits="20" branch="False" />
+            <line number="46" hits="3" branch="False" />
+            <line number="47" hits="3" branch="False" />
+            <line number="48" hits="3" branch="False" />
+            <line number="49" hits="3" branch="False" />
+            <line number="50" hits="3" branch="False" />
+            <line number="51" hits="3" branch="False" />
+            <line number="52" hits="3" branch="False" />
+            <line number="53" hits="3" branch="False" />
+            <line number="54" hits="3" branch="False" />
+            <line number="55" hits="3" branch="False" />
+            <line number="56" hits="3" branch="False" />
+            <line number="57" hits="9" branch="False" />
+            <line number="58" hits="3" branch="False" />
+            <line number="59" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="HelperAndToolsForUT.Helper.Test.FluentAssertions.Tools.ComplexType/AnotherComplexType" filename="source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\FluentAssertions\TestTools.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="get_IntProperty" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="40" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="get_StringProperty" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="42" hits="20" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="40" hits="22" branch="False" />
+            <line number="42" hits="20" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
