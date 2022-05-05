@@ -24,7 +24,8 @@
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
-          "https://artifactory.springlab.enel.com/artifactory/api/nuget/enel_platform_dotnet": {}
+          "https://artifactory.springlab.enel.com/artifactory/api/nuget/enel_platform_dotnet": {},
+          "https://enel-sit.pkgs.visualstudio.com/ENEL-STG/_packaging/SMMePlus-Shared/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -98,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         },
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
@@ -156,7 +157,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

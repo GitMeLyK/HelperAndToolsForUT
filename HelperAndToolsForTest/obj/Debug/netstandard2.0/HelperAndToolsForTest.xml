@@ -371,6 +371,1335 @@
                 ]]></code>
             </example>
         </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.ForEnum.EnumExtensions">
+            <summary>
+                Extensions helper for Enum
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForEnum.EnumExtensions.GetCustomAttributeDescription(System.Enum)">
+            <summary>
+                An object extension method that gets description attribute.
+            </summary>
+            <param name="value">The value to act on.</param>
+            <returns>The description attribute.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForEnum.EnumExtensions.In(System.Enum,System.Enum[])">
+            <summary>
+                A T extension method to determines whether the object is equal to any of the provided values.
+            </summary>
+            <param name="this">The object to be compared.</param>
+            <param name="values">The value list to compare with the object.</param>
+            <returns>true if the values list contains the object, else false.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForEnum.EnumExtensions.NotIn(System.Enum,System.Enum[])">
+            <summary>
+                A T extension method to determines whether the object is not equal to any of the provided values.
+            </summary>
+            <param name="this">The object to be compared.</param>
+            <param name="values">The value list to compare with the object.</param>
+            <returns>true if the values list doesn't contains the object, else false.</returns>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed">
+            <summary>Argument for suppositon in question if path string contain.</summary>
+        </member>
+        <member name="F:HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed.ForFolders">
+            <summary>On check string path assume with string contain a path relative to only sequence folders without referement at file!</summary>
+        </member>
+        <member name="F:HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed.ForFoldersWithFileComplete">
+            <summary>On check string path assume with string contain a path relative to only sequence folders with final referement at file complete of extension!</summary>
+        </member>
+        <member name="F:HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed.ForFoldersWithFileWithoutExtension">
+            <summary>On check string path assume with string contain a path relative to only sequence folders with final referement at file without extension!</summary>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions">
+            <summary>
+                Simplify for FileInfo to get FileName withoust extension.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.IsPathQualificableFull(System.IO.FileInfo,HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed,System.String@)">
+             <summary>
+                 Gets a value indicating whether the specified @this string contains a full qualified path
+                 on system target path and validate a path for use and scope for Directory or File to do Destination.
+             </summary>
+             <param name="this">The @this to test.</param>
+             <param name="supposed">Question if string path supposed is referement to a only sequence of Directories or a sequence of Directory with final referment to File with or not extension<see cref="T:HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed"/></param>
+             <param name="errororwarning">Return if valid in false the motiv</param>
+             <returns>
+                 true if <paramref name="this" /> contains a full path qualified for system win and scope is for as scoe Directory or File target; otherwise, false.
+             </returns>
+             <remarks>
+                 For Directory :
+                 
+                     @"c:\foo"     .IsPathQualificableFull(TypeScope.OnlyDirectory);     // true
+                     @"\foo"       .IsPathQualificableFull(TypeScope.OnlyDirectory);     // false
+                     "foo"         .IsPathQualificableFull(TypeScope.OnlyDirectory);     // false
+                     @"c:1\foo"    .IsPathQualificableFull(TypeScope.OnlyDirectory);     // false
+                     @"c:1\fo|o"   .IsPathQualificableFull(TypeScope.OnlyDirectory);     // false
+                     
+                 For File (Without extension)
+                 
+                     @"c:\foo\filename"    .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     @"\foo\filename"      .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     "foo"                 .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\foo\filename"   .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\fo|o"           .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+            
+                 For File (and extension)
+                 
+                     @"c:\foo\filename.txt"    .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     @"\foo\filename.txt       .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     "foo"                     .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\foo\filename.txt"   .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\fo|o.txt"           .IsPathQualificableFull(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+             </remarks>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.IsPathQualificableAbsolute(System.IO.FileInfo,HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed,System.String@)">
+             <summary>
+                 Gets a value indicating whether the specified @this string contains a root 
+                 absolute path and validate a path for use and scope for Directory or File to do Destination.
+             </summary>
+             <param name="this">The @this to test.</param>
+             <param name="errororwarning">Return if valid in false the motiv</param>
+             <param name="supposed">Question if string path supposed is referement to a only sequence of Directories or a sequence of Directory with final referment to File with or not extension<see cref="T:HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed"/></param>
+             <returns>
+                 true if <paramref name="this" /> contains a root and scope is for as scoe Directory or File target; otherwise, false.
+             </returns>
+             <remarks>
+                 For Directory :
+                 
+                     @"c:\foo"     .IsPathQualificableAbsolute(TypeScope.OnlyDirectory);     // true
+                     @"\foo"       .IsPathQualificableAbsolute(TypeScope.OnlyDirectory);     // true
+                     "foo"         .IsPathQualificableAbsolute(TypeScope.OnlyDirectory);     // false
+                     @"c:1\foo"    .IsPathQualificableAbsolute(TypeScope.OnlyDirectory);     // surprisingly also true
+                     @"c:1\fo|o"   .IsPathQualificableAbsolute(TypeScope.OnlyDirectory);     // surprisingly also true
+                     
+                 For File (Without extension)
+                 
+                     @"c:\foo\filename"    .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     @"\foo\filename"      .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     "foo"                 .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\foo\filename"   .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // surprisingly also true
+                     @"c:1\fo|o"           .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // surprisingly also true
+            
+                 For File (and extension)
+                 
+                     @"c:\foo\filename.txt"    .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     @"\foo\filename.txt       .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     "foo"                     .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\foo\filename.txt"   .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // surprisingly also true
+                     @"c:1\fo|o.txt"           .IsPathQualificableAbsolute(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // surprisingly also true
+             </remarks>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.IsPathQualificableRelative(System.IO.FileInfo,HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed,System.String@)">
+             <summary>
+                 Gets a value indicating whether the specified @this string contains a base
+                 relative path and validate a path for use and scope for Directory or File to do Destination.
+             </summary>
+             <param name="this">The @this to test.</param>
+             <param name="errororwarning">Return if valid in false the motiv</param>
+             <param name="supposed">Question if string path supposed is referement to a only sequence of Directories or a sequence of Directory with final referment to File with or not extension<see cref="T:HelperAndToolsForUT.Helper.Extensions.IOExtensions.TypePathSupposed"/></param>
+             <returns>
+                 true if <paramref name="this" /> contains a base relative path for target and scope is for as scoe Directory or File target; otherwise, false.
+             </returns>
+             <remarks>
+                 For Directory :
+                 
+                     @"c:\foo"     .IsPathQualificableRelative(TypeScope.OnlyDirectory);     // false
+                     @"\foo"       .IsPathQualificableRelative(TypeScope.OnlyDirectory);     // true
+                     "foo"         .IsPathQualificableRelative(TypeScope.OnlyDirectory);     // false
+                     @"c:1\foo"    .IsPathQualificableRelative(TypeScope.OnlyDirectory);     // false
+                     @"c:1\fo|o"   .IsPathQualificableRelative(TypeScope.OnlyDirectory);     // false
+                     
+                 For File (Without extension)
+                 
+                     @"c:\foo\filename"    .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"\foo\filename"      .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     "foo"                 .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\foo\filename"   .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\fo|o"           .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+            
+                 For File (and extension)
+                 
+                     @"c:\foo\filename.txt"    .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"\foo\filename.txt       .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // true
+                     "foo"                     .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\foo\filename.txt"   .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+                     @"c:1\fo|o.txt"           .IsPathQualificableRelative(TypeScope.DirectoryAndFilenameDestinationWithoutExtension);     // false
+             </remarks>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.CountLines(System.IO.FileInfo)">
+            <summary>Gets the total number of lines in a file. </summary>
+            <param name="this">The file to perform the count on.</param>
+            <returns>The total number of lines in a file. </returns>
+            <inheritdoc cref="M:System.IO.File.ReadAllLines(System.String)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.CountLines(System.IO.FileInfo,System.Func{System.String,System.Boolean})">
+            <summary>Gets the total number of lines in a file that satisfy the condition in the predicate function.</summary>
+            <param name="this">The file to perform the count on.</param>
+            <param name="predicate">A function to test each line for a condition.</param>
+            <returns>The total number of lines in a file that satisfy the condition in the predicate function.</returns>
+            <exception cref="T:System.OverflowException" />
+            <inheritdoc cref="M:System.IO.File.ReadAllLines(System.String)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.Rename(System.IO.FileInfo,System.String)">
+            <summary>
+                A FileInfo extension method that renames.
+            </summary>
+            <param name="this">The @this to act on.</param>
+            <param name="newName">Name of the new.</param>
+            <returns>Null if OK, else Error or Warning for name or path not valid!</returns>
+            <inheritdoc cref="M:System.IO.FileInfo.MoveTo(System.String)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.EnsureDirectoryExists(System.IO.FileInfo)">
+            <summary>
+                Creates all directories and subdirectories in the specified @this if the directory doesn't already exists.
+                This methods is the same as FileInfo.CreateDirectory however it's less ambigues about what happen if the
+                directory already exists.
+            </summary>
+            <param name="this">The directory @this to create.</param>
+            <returns>An object that represents the directory for the specified @this.</returns>
+            <inheritdoc cref="M:System.IO.Directory.CreateDirectory(System.String)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.ChangeExtension(System.IO.FileInfo,System.String)">
+            <summary>
+                Changes the extension of a @this string.
+            </summary>
+            <param name="this">The file to perform the count on.</param>
+            <param name="extension">New extension to change</param>
+            <inheritdoc cref="M:System.IO.Path.ChangeExtension(System.String,System.String)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.GetFileNameWithoutExtension(System.IO.FileInfo)">
+            <summary>
+                Returns the file name of the specified @this string without the extension.
+            </summary>
+            <param name="this">The @this of the file.</param>
+            <returns>
+                The string returned by <see cref="M:System.IO.Path.GetFileName(System.String)" />, minus the last period (.)
+                and all characters following it.
+            </returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.AppendAllLines(System.IO.FileInfo,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                A FileInfo extension method that appends all lines.
+            </summary>
+            <param name="this">The @this to act on.</param>
+            <param name="contents">The contents.</param>
+            <inheritdoc cref="M:System.IO.File.AppendAllLines(System.String,System.Collections.Generic.IEnumerable{System.String})"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.AppendAllLines(System.IO.FileInfo,System.Collections.Generic.IEnumerable{System.String},System.Text.Encoding)">
+            <summary>
+                A FileInfo extension method that appends all lines.
+            </summary>
+            <param name="this">The @this to act on.</param>
+            <param name="contents">The contents.</param>
+            <param name="encoding">The encoding.</param>
+            <inheritdoc cref="M:System.IO.File.AppendAllLines(System.String,System.Collections.Generic.IEnumerable{System.String})"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.AppendAllText(System.IO.FileInfo,System.String)">
+            <summary>
+                Opens a file, appends the specified string to the file, and then closes the file. If the file does not exist,
+                this method creates a file, writes the specified string to the file, then closes the file.
+            </summary>
+            <param name="this">The file to append the specified string to.</param>
+            <param name="contents">The string to append to the file.</param>
+            <inheritdoc cref="M:System.IO.File.AppendAllText(System.String,System.String)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.AppendAllText(System.IO.FileInfo,System.String,System.Text.Encoding)">
+            <summary>
+                Appends the specified string to the file, creating the file if it does not already exist.
+            </summary>
+            <param name="this">The file to append the specified string to.</param>
+            <param name="contents">The string to append to the file.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <inheritdoc cref="M:System.IO.File.AppendAllText(System.String,System.String,System.Text.Encoding)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.IsPathRooted(System.IO.FileInfo)">
+            <summary>
+                Gets a value indicating whether the specified @this string contains 
+                a Absolute Path in os target system with full qualified path.
+            </summary>
+            <param name="this">The @this to test.</param>
+            <returns>
+                true if <paramref name="this" /> contains a root; otherwise, false.
+            </returns>
+            <remarks>
+                .IsPathRooted(@"c:foo");    // false
+                .IsPathRooted(@"/foo");     // true
+                .IsPathRooted(@"c:/foo");   // true
+            </remarks>
+            <inheritdoc cref="M:System.IO.Path.IsPathRooted(System.String)"/>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.IOExtensions.FileInfoExtensions.IsPathFullyQualified(System.IO.FileInfo)">
+            <summary>
+                Gets a value indicating whether the specified @this string contains 
+                a Full Path UNC in win system with full qualified path.
+            </summary>
+            <param name="this">The @this to test.</param>
+            <returns>
+                true if <paramref name="this" /> contains a root; otherwise, false.
+            </returns>
+            <remarks>
+                .IsPathFullyQualified(@"c:foo");    // false
+                .IsPathFullyQualified(@"/foo");     // false
+                .IsPathFullyQualified(@"c:/foo");   // true
+            </remarks>
+            <inheritdoc cref="M:System.IO.Path.IsPathRooted(System.String)"/>
+        </member>
+        <member name="T:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions">
+            <summary>
+                Extensions helper for Enum
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.As``1(System.Object)">
+            <summary>
+                An object extension method that cast anonymous type to the specified type.
+            </summary>
+            <typeparam name="T">Generic type parameter. The specified type.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <returns>The object as the specified type.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.AsOrDefault``1(System.Object)">
+            <summary>
+                An object extension method that converts the @this to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <returns>A T.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.AsOrDefault``1(System.Object,``0)">
+            <summary>
+                An object extension method that converts the @this to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>A T.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.AsOrDefault``1(System.Object,System.Func{``0})">
+            <summary>
+                An object extension method that converts the @this to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="defaultValueFactory">The default value factory.</param>
+            <returns>A T.</returns>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_AsOrDefault
+                      {
+                          [TestMethod]
+                          public void AsOrDefault()
+                          {
+                              // Type
+                              object intValue = 1;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.AsOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.AsOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.AsOrDefault(3); // return 3;
+                              int result4 = invalidValue.AsOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_AsOrDefault
+                      {
+                          [TestMethod]
+                          public void AsOrDefault()
+                          {
+                              // Type
+                              object intValue = 1;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.AsOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.AsOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.AsOrDefault(3); // return 3;
+                              int result4 = invalidValue.AsOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                      using Microsoft.VisualStudio.TestTools.UnitTesting;
+                      using Z.ExtensionMethods.Object;
+                      
+                      namespace ExtensionMethods.Examples
+                      {
+                          [TestClass]
+                          public class System_Object_AsOrDefault
+                          {
+                              [TestMethod]
+                              public void AsOrDefault()
+                              {
+                                  // Type
+                                  object intValue = 1;
+                                  object invalidValue = &quot;Fizz&quot;;
+                      
+                                  // Exemples
+                                  var result1 = intValue.AsOrDefault&lt;int&gt;(); // return 1;
+                                  var result2 = invalidValue.AsOrDefault&lt;int&gt;(); // return 0;
+                                  int result3 = invalidValue.AsOrDefault(3); // return 3;
+                                  int result4 = invalidValue.AsOrDefault(() =&gt; 4); // return 4;
+                      
+                                  // Unit Test
+                                  Assert.AreEqual(1, result1);
+                                  Assert.AreEqual(0, result2);
+                                  Assert.AreEqual(3, result3);
+                                  Assert.AreEqual(4, result4);
+                              }
+                          }
+                      }
+                </code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.AsOrDefault``1(System.Object,System.Func{System.Object,``0})">
+            <summary>
+                An object extension method that converts the @this to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="defaultValueFactory">The default value factory.</param>
+            <returns>A T.</returns>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_AsOrDefault
+                      {
+                          [TestMethod]
+                          public void AsOrDefault()
+                          {
+                              // Type
+                              object intValue = 1;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.AsOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.AsOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.AsOrDefault(3); // return 3;
+                              int result4 = invalidValue.AsOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_AsOrDefault
+                      {
+                          [TestMethod]
+                          public void AsOrDefault()
+                          {
+                              // Type
+                              object intValue = 1;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.AsOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.AsOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.AsOrDefault(3); // return 3;
+                              int result4 = invalidValue.AsOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                      using Microsoft.VisualStudio.TestTools.UnitTesting;
+                      using Z.ExtensionMethods.Object;
+                      
+                      namespace ExtensionMethods.Examples
+                      {
+                          [TestClass]
+                          public class System_Object_AsOrDefault
+                          {
+                              [TestMethod]
+                              public void AsOrDefault()
+                              {
+                                  // Type
+                                  object intValue = 1;
+                                  object invalidValue = &quot;Fizz&quot;;
+                      
+                                  // Exemples
+                                  var result1 = intValue.AsOrDefault&lt;int&gt;(); // return 1;
+                                  var result2 = invalidValue.AsOrDefault&lt;int&gt;(); // return 0;
+                                  int result3 = invalidValue.AsOrDefault(3); // return 3;
+                                  int result4 = invalidValue.AsOrDefault(() =&gt; 4); // return 4;
+                      
+                                  // Unit Test
+                                  Assert.AreEqual(1, result1);
+                                  Assert.AreEqual(0, result2);
+                                  Assert.AreEqual(3, result3);
+                                  Assert.AreEqual(4, result4);
+                              }
+                          }
+                      }
+                </code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ChangeType(System.Object,System.TypeCode)">
+            <summary>
+                Returns an object of the specified type whose value is equivalent to the specified object.
+            </summary>
+            <param name="value">An object that implements the  interface.</param>
+            <param name="typeCode">The type of object to return.</param>
+            <returns>
+                An object whose underlying type is  and whose value is equivalent to .-or-A null reference (Nothing in Visual
+                Basic), if  is null and  is , , or .
+            </returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ChangeType(System.Object,System.TypeCode,System.IFormatProvider)">
+            <summary>
+                Returns an object of the specified type whose value is equivalent to the specified object. A parameter
+                supplies culture-specific formatting information.
+            </summary>
+            <param name="value">An object that implements the  interface.</param>
+            <param name="typeCode">The type of object to return.</param>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <returns>
+                An object whose underlying type is  and whose value is equivalent to .-or- A null reference (Nothing in
+                Visual Basic), if  is null and  is , , or .
+            </returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ChangeType(System.Object,System.Type)">
+            <summary>
+                Returns an object of the specified type and whose value is equivalent to the specified object.
+            </summary>
+            <param name="value">An object that implements the  interface.</param>
+            <param name="conversionType">The type of object to return.</param>
+            <returns>
+                An object whose type is  and whose value is equivalent to .-or-A null reference (Nothing in Visual Basic), if
+                is null and  is not a value type.
+            </returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ChangeType(System.Object,System.Type,System.IFormatProvider)">
+            <summary>
+                Returns an object of the specified type whose value is equivalent to the specified object. A parameter
+                supplies culture-specific formatting information.
+            </summary>
+            <param name="value">An object that implements the  interface.</param>
+            <param name="conversionType">The type of object to return.</param>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <returns>
+                An object whose type is  and whose value is equivalent to .-or- , if the  of  and  are equal.-or- A null
+                reference (Nothing in Visual Basic), if  is null and  is not a value type.
+            </returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ChangeType``1(System.Object)">
+            <summary>
+                Returns an object of the specified type and whose value is equivalent to the specified object.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="value">An object that implements the  interface.</param>
+            <returns>
+                An object whose type is  and whose value is equivalent to .-or-A null reference (Nothing in Visual Basic), if
+                is null and  is not a value type.
+            </returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ChangeType``1(System.Object,System.IFormatProvider)">
+            <summary>
+                Returns an object of the specified type whose value is equivalent to the specified object. A parameter
+                supplies culture-specific formatting information.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="value">An object that implements the  interface.</param>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <returns>
+                An object whose type is  and whose value is equivalent to .-or- , if the  of  and  are equal.-or- A null
+                reference (Nothing in Visual Basic), if  is null and  is not a value type.
+            </returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.Coalesce``1(``0,``0[])">
+            <summary>
+                A T extension method that that return the first not null value (including the @this).
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="values">A variable-length parameters list containing values.</param>
+            <returns>The first not null value.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.CoalesceOrDefault``1(``0,``0[])">
+            <summary>
+                A T extension method that that return the first not null value (including the @this) or a default value.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="values">A variable-length parameters list containing values.</param>
+            <returns>The first not null value or a default value.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.CoalesceOrDefault``1(``0,System.Func{``0},``0[])">
+            <summary>
+                A T extension method that that return the first not null value (including the @this) or a default value.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="defaultValueFactory">The default value factory.</param>
+            <param name="values">A variable-length parameters list containing values.</param>
+            <returns>The first not null value or a default value.</returns>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+            
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_CoalesceOrDefault
+                      {
+                          [TestMethod]
+                          public void CoalesceOrDefault()
+                          {
+                              // Varable
+                              object nullObject = null;
+            
+                              // Type
+                              object @thisNull = null;
+                              object @thisNotNull = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              object result1 = @thisNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Buzz&quot;;
+                              object result2 = @thisNull.CoalesceOrDefault(() =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result3 = @thisNull.CoalesceOrDefault((x) =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result4 = @thisNotNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Fizz&quot;;
+            
+                              // Unit Test
+                              Assert.AreEqual(&quot;Buzz&quot;, result1);
+                              Assert.AreEqual(&quot;Buzz&quot;, result2);
+                              Assert.AreEqual(&quot;Buzz&quot;, result3);
+                              Assert.AreEqual(&quot;Fizz&quot;, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_CoalesceOrDefault
+                      {
+                          [TestMethod]
+                          public void CoalesceOrDefault()
+                          {
+                              // Varable
+                              object nullObject = null;
+            
+                              // Type
+                              object @thisNull = null;
+                              object @thisNotNull = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              object result1 = @thisNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Buzz&quot;;
+                              object result2 = @thisNull.CoalesceOrDefault(() =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result3 = @thisNull.CoalesceOrDefault(x =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result4 = @thisNotNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Fizz&quot;;
+            
+                              // Unit Test
+                              Assert.AreEqual(&quot;Buzz&quot;, result1);
+                              Assert.AreEqual(&quot;Buzz&quot;, result2);
+                              Assert.AreEqual(&quot;Buzz&quot;, result3);
+                              Assert.AreEqual(&quot;Fizz&quot;, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                      using Microsoft.VisualStudio.TestTools.UnitTesting;
+                      using Z.ExtensionMethods.Object;
+                      
+                      namespace ExtensionMethods.Examples
+                      {
+                          [TestClass]
+                          public class System_Object_CoalesceOrDefault
+                          {
+                              [TestMethod]
+                              public void CoalesceOrDefault()
+                              {
+                                  // Varable
+                                  object nullObject = null;
+                      
+                                  // Type
+                                  object @thisNull = null;
+                                  object @thisNotNull = &quot;Fizz&quot;;
+                      
+                                  // Exemples
+                                  object result1 = @thisNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Buzz&quot;;
+                                  object result2 = @thisNull.CoalesceOrDefault(() =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                                  object result3 = @thisNull.CoalesceOrDefault(x =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                                  object result4 = @thisNotNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Fizz&quot;;
+                      
+                                  // Unit Test
+                                  Assert.AreEqual(&quot;Buzz&quot;, result1);
+                                  Assert.AreEqual(&quot;Buzz&quot;, result2);
+                                  Assert.AreEqual(&quot;Buzz&quot;, result3);
+                                  Assert.AreEqual(&quot;Fizz&quot;, result4);
+                              }
+                          }
+                      }
+                </code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.CoalesceOrDefault``1(``0,System.Func{``0,``0},``0[])">
+            <summary>
+                A T extension method that that return the first not null value (including the @this) or a default value.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="defaultValueFactory">The default value factory.</param>
+            <param name="values">A variable-length parameters list containing values.</param>
+            <returns>The first not null value or a default value.</returns>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+            
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_CoalesceOrDefault
+                      {
+                          [TestMethod]
+                          public void CoalesceOrDefault()
+                          {
+                              // Varable
+                              object nullObject = null;
+            
+                              // Type
+                              object @thisNull = null;
+                              object @thisNotNull = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              object result1 = @thisNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Buzz&quot;;
+                              object result2 = @thisNull.CoalesceOrDefault(() =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result3 = @thisNull.CoalesceOrDefault((x) =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result4 = @thisNotNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Fizz&quot;;
+            
+                              // Unit Test
+                              Assert.AreEqual(&quot;Buzz&quot;, result1);
+                              Assert.AreEqual(&quot;Buzz&quot;, result2);
+                              Assert.AreEqual(&quot;Buzz&quot;, result3);
+                              Assert.AreEqual(&quot;Fizz&quot;, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_CoalesceOrDefault
+                      {
+                          [TestMethod]
+                          public void CoalesceOrDefault()
+                          {
+                              // Varable
+                              object nullObject = null;
+            
+                              // Type
+                              object @thisNull = null;
+                              object @thisNotNull = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              object result1 = @thisNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Buzz&quot;;
+                              object result2 = @thisNull.CoalesceOrDefault(() =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result3 = @thisNull.CoalesceOrDefault(x =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                              object result4 = @thisNotNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Fizz&quot;;
+            
+                              // Unit Test
+                              Assert.AreEqual(&quot;Buzz&quot;, result1);
+                              Assert.AreEqual(&quot;Buzz&quot;, result2);
+                              Assert.AreEqual(&quot;Buzz&quot;, result3);
+                              Assert.AreEqual(&quot;Fizz&quot;, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                      using Microsoft.VisualStudio.TestTools.UnitTesting;
+                      using Z.ExtensionMethods.Object;
+                      
+                      namespace ExtensionMethods.Examples
+                      {
+                          [TestClass]
+                          public class System_Object_CoalesceOrDefault
+                          {
+                              [TestMethod]
+                              public void CoalesceOrDefault()
+                              {
+                                  // Varable
+                                  object nullObject = null;
+                      
+                                  // Type
+                                  object @thisNull = null;
+                                  object @thisNotNull = &quot;Fizz&quot;;
+                      
+                                  // Exemples
+                                  object result1 = @thisNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Buzz&quot;;
+                                  object result2 = @thisNull.CoalesceOrDefault(() =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                                  object result3 = @thisNull.CoalesceOrDefault(x =&gt; &quot;Buzz&quot;, null, null); // return &quot;Buzz&quot;;
+                                  object result4 = @thisNotNull.CoalesceOrDefault(nullObject, nullObject, &quot;Buzz&quot;); // return &quot;Fizz&quot;;
+                      
+                                  // Unit Test
+                                  Assert.AreEqual(&quot;Buzz&quot;, result1);
+                                  Assert.AreEqual(&quot;Buzz&quot;, result2);
+                                  Assert.AreEqual(&quot;Buzz&quot;, result3);
+                                  Assert.AreEqual(&quot;Fizz&quot;, result4);
+                              }
+                          }
+                      }
+                </code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.DeepClone``1(``0)">
+            <summary>
+                A T extension method that makes a deep copy of '@this' object.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <returns>the copied object.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.IfNotNull``1(``0,System.Action{``0})">
+            <summary>A T extension method that execute an action when the value is not null.</summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.IfNotNull``2(``0,System.Func{``0,``1})">
+            <summary>
+                A T extension method that the function result if not null otherwise default value.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TResult">Type of the result.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="func">The function.</param>
+            <returns>The function result if @this is not null otherwise default value.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.IfNotNull``2(``0,System.Func{``0,``1},``1)">
+            <summary>
+                A T extension method that the function result if not null otherwise default value.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TResult">Type of the result.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="func">The function.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The function result if @this is not null otherwise default value.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.IfNotNull``2(``0,System.Func{``0,``1},System.Func{``1})">
+            <summary>
+                A T extension method that the function result if not null otherwise default value.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TResult">Type of the result.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="func">The function.</param>
+            <param name="defaultValueFactory">The default value factory.</param>
+            <returns>The function result if @this is not null otherwise default value.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.In``1(``0,``0[])">
+            <summary>
+                A T extension method to determines whether the object is equal to any of the provided values.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The object to be compared.</param>
+            <param name="values">The value list to compare with the object.</param>
+            <returns>true if the values list contains the object, else false.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.IsSubclassOf``1(``0,System.Type)">
+            <summary>
+                A T extension method that query if '@this' is subclass of.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="type">The Type to process.</param>
+            <returns>true if subclass of, false if not.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.To``1(System.Object)">
+            <summary>
+                A System.Object extension method that toes the given this.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">this.</param>
+            <returns>A T.</returns>
+            <example>
+                <code>
+                  using System;
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+            
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_To
+                      {
+                          [TestMethod]
+                          public void To()
+                          {
+                              string nullValue = null;
+                              string value = &quot;1&quot;;
+                              object dbNullValue = DBNull.Value;
+            
+                              // Exemples
+                              var result1 = value.To&lt;int&gt;(); // return 1;
+                              var result2 = value.To&lt;int?&gt;(); // return 1;
+                              var result3 = nullValue.To&lt;int?&gt;(); // return null;
+                              var result4 = dbNullValue.To&lt;int?&gt;(); // return null;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(1, result2.Value);
+                              Assert.IsFalse(result3.HasValue);
+                              Assert.IsFalse(result4.HasValue);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using System;
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_To
+                      {
+                          [TestMethod]
+                          public void To()
+                          {
+                              string nullValue = null;
+                              string value = &quot;1&quot;;
+                              object dbNullValue = DBNull.Value;
+            
+                              // Exemples
+                              var result1 = value.To&lt;int&gt;(); // return 1;
+                              var result2 = value.To&lt;int?&gt;(); // return 1;
+                              var result3 = nullValue.To&lt;int?&gt;(); // return null;
+                              var result4 = dbNullValue.To&lt;int?&gt;(); // return null;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(1, result2.Value);
+                              Assert.IsFalse(result3.HasValue);
+                              Assert.IsFalse(result4.HasValue);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.To(System.Object,System.Type)">
+            <summary>
+                A System.Object extension method that toes the given this.
+            </summary>
+            <param name="this">this.</param>
+            <param name="type">The type.</param>
+            <returns>An object.</returns>
+            <example>
+                <code>
+                  using System;
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+            
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_To
+                      {
+                          [TestMethod]
+                          public void To()
+                          {
+                              string nullValue = null;
+                              string value = &quot;1&quot;;
+                              object dbNullValue = DBNull.Value;
+            
+                              // Exemples
+                              var result1 = value.To&lt;int&gt;(); // return 1;
+                              var result2 = value.To&lt;int?&gt;(); // return 1;
+                              var result3 = nullValue.To&lt;int?&gt;(); // return null;
+                              var result4 = dbNullValue.To&lt;int?&gt;(); // return null;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(1, result2.Value);
+                              Assert.IsFalse(result3.HasValue);
+                              Assert.IsFalse(result4.HasValue);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using System;
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_To
+                      {
+                          [TestMethod]
+                          public void To()
+                          {
+                              string nullValue = null;
+                              string value = &quot;1&quot;;
+                              object dbNullValue = DBNull.Value;
+            
+                              // Exemples
+                              var result1 = value.To&lt;int&gt;(); // return 1;
+                              var result2 = value.To&lt;int?&gt;(); // return 1;
+                              var result3 = nullValue.To&lt;int?&gt;(); // return null;
+                              var result4 = dbNullValue.To&lt;int?&gt;(); // return null;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(1, result2.Value);
+                              Assert.IsFalse(result3.HasValue);
+                              Assert.IsFalse(result4.HasValue);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            ###
+            <typeparam name="T">Generic type parameter.</typeparam>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ToOrDefault``1(System.Object,System.Func{System.Object,``0})">
+            <summary>
+                A System.Object extension method that converts this object to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">this.</param>
+            <param name="defaultValueFactory">The default value factory.</param>
+            <returns>The given data converted to a T.</returns>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_ToOrDefault
+                      {
+                          [TestMethod]
+                          public void ToOrDefault()
+                          {
+                              // Type
+                              object intValue = &quot;1&quot;;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.ToOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.ToOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.ToOrDefault(3); // return 3;
+                              int result4 = invalidValue.ToOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_ToOrDefault
+                      {
+                          [TestMethod]
+                          public void ToOrDefault()
+                          {
+                              // Type
+                              object intValue = &quot;1&quot;;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.ToOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.ToOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.ToOrDefault(3); // return 3;
+                              int result4 = invalidValue.ToOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                      using Microsoft.VisualStudio.TestTools.UnitTesting;
+                      using Z.ExtensionMethods.Object;
+                      
+                      namespace ExtensionMethods.Examples
+                      {
+                          [TestClass]
+                          public class System_Object_ToOrDefault
+                          {
+                              [TestMethod]
+                              public void ToOrDefault()
+                              {
+                                  // Type
+                                  object intValue = &quot;1&quot;;
+                                  object invalidValue = &quot;Fizz&quot;;
+                      
+                                  // Exemples
+                                  var result1 = intValue.ToOrDefault&lt;int&gt;(); // return 1;
+                                  var result2 = invalidValue.ToOrDefault&lt;int&gt;(); // return 0;
+                                  int result3 = invalidValue.ToOrDefault(3); // return 3;
+                                  int result4 = invalidValue.ToOrDefault(() =&gt; 4); // return 4;
+                      
+                                  // Unit Test
+                                  Assert.AreEqual(1, result1);
+                                  Assert.AreEqual(0, result2);
+                                  Assert.AreEqual(3, result3);
+                                  Assert.AreEqual(4, result4);
+                              }
+                          }
+                      }
+                </code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ToOrDefault``1(System.Object,System.Func{``0})">
+            <summary>
+                A System.Object extension method that converts this object to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">this.</param>
+            <param name="defaultValueFactory">The default value factory.</param>
+            <returns>The given data converted to a T.</returns>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_ToOrDefault
+                      {
+                          [TestMethod]
+                          public void ToOrDefault()
+                          {
+                              // Type
+                              object intValue = &quot;1&quot;;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.ToOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.ToOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.ToOrDefault(3); // return 3;
+                              int result4 = invalidValue.ToOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                  using Microsoft.VisualStudio.TestTools.UnitTesting;
+                  using Z.ExtensionMethods.Object;
+            
+                  namespace ExtensionMethods.Examples
+                  {
+                      [TestClass]
+                      public class System_Object_ToOrDefault
+                      {
+                          [TestMethod]
+                          public void ToOrDefault()
+                          {
+                              // Type
+                              object intValue = &quot;1&quot;;
+                              object invalidValue = &quot;Fizz&quot;;
+            
+                              // Exemples
+                              var result1 = intValue.ToOrDefault&lt;int&gt;(); // return 1;
+                              var result2 = invalidValue.ToOrDefault&lt;int&gt;(); // return 0;
+                              int result3 = invalidValue.ToOrDefault(3); // return 3;
+                              int result4 = invalidValue.ToOrDefault(() =&gt; 4); // return 4;
+            
+                              // Unit Test
+                              Assert.AreEqual(1, result1);
+                              Assert.AreEqual(0, result2);
+                              Assert.AreEqual(3, result3);
+                              Assert.AreEqual(4, result4);
+                          }
+                      }
+                  }
+            </code>
+            </example>
+            <example>
+                <code>
+                      using Microsoft.VisualStudio.TestTools.UnitTesting;
+                      using Z.ExtensionMethods.Object;
+                      
+                      namespace ExtensionMethods.Examples
+                      {
+                          [TestClass]
+                          public class System_Object_ToOrDefault
+                          {
+                              [TestMethod]
+                              public void ToOrDefault()
+                              {
+                                  // Type
+                                  object intValue = &quot;1&quot;;
+                                  object invalidValue = &quot;Fizz&quot;;
+                      
+                                  // Exemples
+                                  var result1 = intValue.ToOrDefault&lt;int&gt;(); // return 1;
+                                  var result2 = invalidValue.ToOrDefault&lt;int&gt;(); // return 0;
+                                  int result3 = invalidValue.ToOrDefault(3); // return 3;
+                                  int result4 = invalidValue.ToOrDefault(() =&gt; 4); // return 4;
+                      
+                                  // Unit Test
+                                  Assert.AreEqual(1, result1);
+                                  Assert.AreEqual(0, result2);
+                                  Assert.AreEqual(3, result3);
+                                  Assert.AreEqual(4, result4);
+                              }
+                          }
+                      }
+                </code>
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ToOrDefault``1(System.Object)">
+            <summary>
+                A System.Object extension method that converts this object to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">this.</param>
+            <returns>The given data converted to a T.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ToOrDefault``1(System.Object,``0)">
+            <summary>
+                A System.Object extension method that converts this object to an or default.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">this.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The given data converted to a T.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.SerializeJson``1(``0)">
+            <summary>
+                A T extension method that serialize an object to Json.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <returns>The Json string.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.SerializeJson``1(``0,System.Text.Encoding)">
+            <summary>
+                A T extension method that serialize an object to Json.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <param name="encoding">The encoding.</param>
+            <returns>The Json string.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.SerializeXml(System.Object)">
+            <summary>
+                An object extension method that serialize a string to XML.
+            </summary>
+            <param name="this">The @this to act on.</param>
+            <returns>The string representation of the Xml Serialization.</returns>
+        </member>
+        <member name="M:HelperAndToolsForUT.Helper.Extensions.ForObject.ObjectExtensions.ShallowCopy``1(``0)">
+            <summary>
+                A T extension method that shallow copy.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="this">The @this to act on.</param>
+            <returns>A T.</returns>
+        </member>
         <member name="T:HelperAndToolsForUT.Helper.Abstraction.MOQ.MoqTestDataBuilder`2">
             <summary>
                 Base to Implement Test Builder on Class complex with subclass
@@ -593,6 +1922,784 @@
             <summary>
                 On derivated implement a verification case.
             </summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.TypeConvention">
+            <summary>
+                Type conventions validation in use from this HostTypeConvention 
+                at the moment of the instance or Picked from list defaults or custom.
+            </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.TypeConvention.RUNTIME">
+            <summary>On constructor of HostConvention define to use HostConvention of Host in execution a runtime, if Runtime not resolved Host in execution well be setted OTHER</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.TypeConvention.PICKED">
+            <summary>On constructor of HostConvention define to use HostConvention of Host choice from list of Host managed internally <see cref="T:HelperAndToolsForTest.IO.HostType"/> a runtime</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.TypeConvention.CUSTOM">
+            <summary>On construnctor of HostConvention as defined from user HostConvention of Host only from parameters custom of user</summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.HostType">
+            <summary>
+                For Conventions in use to Utils
+                set or found HOST with ricepts of
+                convention standard in use in host type.
+            </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostType.WINDOWS">
+            <summary>Windows (All versions system)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostType.IOS">
+            <summary>MAC (All versions system)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostType.LINUX">
+            <summary>Linux (All of base system)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostType.FREEBSD">
+            <summary>Unix Like (All of base to Free)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostType.OTHER">
+            <summary>General OS base</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostType.UKNOWED">
+            <summary>In mode RUNTIME if system return string host not parsed from this procedure.</summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.HostTypeConvention">
+            <summary>
+                Support to analyze path for file system on OS destination,
+            </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.defaultsExtraCharsNotValidPathGeneralSystem">
+            <summary>Chars default extra not Valid for Other General System</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.defaultsExtraCharsNotValidPathWinSystem">
+            <summary>Chars default extra not Valid for Windows System</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.defaultsExtraCharsNotValidPathMacSystem">
+            <summary>Chars default extra not Valid for MAC System</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.defaultsExtraCharsNotValidPathLinuxSystem">
+            <summary>Chars default extra not Valid for Linux System</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.defaultsExtraCharsNotValidPathFreebsdSystem">
+            <summary>Chars default extra not Valid for Linux System</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesForFileGeneralSystem">
+            <summary>Reserved Name convention do not use in general OS (default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesForFileWinSystem">
+            <summary>Reserved Name convention do not use in Windows OS NTFS (default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesForFileMacSystem">
+            <summary>Reserved Name convention do not use in Mac OS (default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesForFileLinuxSystem">
+            <summary>Reserved Name convention do not use in Linux OS (default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesForFileFreebsdSystem">
+            <summary>Reserved Name convention do not use in FreeBsd OS (default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesPathRootGeneralSystem">
+            <summary>Reserved Name convention do not use in other generic for Root(default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesPathRootWinSystem">
+            <summary>Reserved Name convention do not use in Windows OS NTFS for Root(default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesPathRootMacSystem">
+            <summary>Reserved Name convention do not use in MAC for Root(default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesPathRootLinuxSystem">
+            <summary>Reserved Name convention do not use in Linux for Root(default check)</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.HostTypeConvention.reservedNamesPathRootFreebsdSystem">
+            <summary>Reserved Name convention do not use in Freebsd for Root(default check)</summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.HostTypeConvention.HostValidation">
+            <summary>
+                Name and description of HOST and type conventions is in use of 
+                OS filesytem if resolved convention from host in execution, or Name of 
+                Host Picked on choice from use, or if custom name attribuite for ipotetic host.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.HostTypeConvention.HostFound">
+            <summary>
+                Return Host Convention in use.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.HostTypeConvention.ConventionType">
+            <summary>
+                Return type of validation setted for this instance of host convention.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.HostTypeConvention.ReservedNamesForRoot">
+            <summary>
+                Return List of Names reserved only in Root with extra names if user use a custom conventions extra.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.HostTypeConvention.ReservedNamesForFileName">
+            <summary>
+                Return List of Names reserved only in FileName with extra names if user use a custom conventions extra.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.HostTypeConvention.ListOfInvalidCharsForPath">
+            <summary>
+                Return List of Chars with extra if user use a custom conventions extra fo not valid assignment in sequence path.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.HostTypeConvention.Options">
+            <summary>
+                Return type of validation setted for this instance of host convention.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.#ctor(System.Char[],System.String[],System.String[],HelperAndToolsForTest.IO.OptionsConvention)">
+            <summary>
+                RUNTIME - Return a default conventions in use of current FileSystem at Runtime
+            </summary>
+            <param name="extraInvalidCharsForPath">Extra vars chars to check if valid in this path. (For default use list of chars prohibited on system win NTFS) also use a array empty {} to not check validatation</param>
+            <param name="extraNamesDoNotUseInRootSystem">Optional to invalidate Path if a path in Root contains one of this name list used from system for convention internal, default is named of win system ntfs</param>
+            <param name="extraNamesDoNotUseForFileName">Optional to invalidate Path if a path in cas have filename final contains one of this name list used from system for convention internal, default is named internal of win system ntfs</param>
+            <param name="alterOptionsConvention">Optional to invalidate for default in win system if options for behavior for path and file is valid.</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.#ctor(HelperAndToolsForTest.IO.HostType,System.Char[],System.String[],System.String[],HelperAndToolsForTest.IO.OptionsConvention)">
+            <summary>
+                PICKED - Return a default conventions  from user to use in path and file system target.
+            </summary>
+            <param name="convention">Set convention predefineted from choice HOST managed from this class.</param>
+            <param name="extraInvalidCharsForPath">Extra vars chars to check if valid in this path. (For default use list of chars prohibited on system win NTFS) also use a array empty {} to not check validatation</param>
+            <param name="extraNamesDoNotUseInRootSystem">Optional to invalidate Path if a path in Root contains one of this name list used from system for convention internal, default is named of win system ntfs</param>
+            <param name="extraNamesDoNotUseForFileName">Optional to invalidate Path if a path in cas have filename final contains one of this name list used from system for convention internal, default is named internal of win system ntfs</param>
+            <param name="alterOptionsConvention">Optional to invalidate for default in win system if options for behavior for path and file is valid.</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.#ctor(System.String,System.Char[],System.String[],System.String[],HelperAndToolsForTest.IO.OptionsConvention)">
+            <summary>
+                CUSTOM -Return a custom conventions definited from user to use in path and file system target.
+            </summary>
+            <param name="NameofCustomHost">Name strbuite to this Custom Host convention</param>
+            <param name="customExtraInvalidCharsForPath">Custom vars chars to check if valid in this path. (For default use list of chars prohibited on system win NTFS) also use a array empty {} to not check validatation</param>
+            <param name="customExtraNamesDoNotUseInRootSystem">Custom to invalidate Path if a path in Root contains one of this name list used from system for convention internal, default is named of win system ntfs</param>
+            <param name="customExtraNamesDoNotUseForFileName">Custom to invalidate Path if a path in cas have filename final contains one of this name list used from system for convention internal, default is named internal of win system ntfs</param>
+            <param name="customOptionsConvention">Optional to invalidate for default in win system if options for behavior for path and file is valid.</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.#ctor(System.Boolean,System.Nullable{HelperAndToolsForTest.IO.HostType},HelperAndToolsForTest.IO.OptionsConvention,System.Char[],System.String[],System.String[],System.String)">
+            <summary>
+                Return a default conventions in use of current FileSystem at Runtime if argument <paramref name="validateForCurrentHostSystem"/> is true. 
+                The Behavior is in case of true for Runtime Host in execution, is if Runtime in not resolved for 
+                cause of system os with filesystem custom, this object use other params to apply custom conventions in case of OTHER system.
+                Also in case of <paramref name="validateForCurrentHostSystem"/> is false the custom conventions in other arguments is 
+                applyed in mode esclusive without add internal clausole of system in execution.
+            </summary>
+            <param name="validateForCurrentHostSystem"> if True = check if chars based on current Host Type file system also not check and use only extraInvalidCharsForPath if filled or null, and if windows system check FullQualifiedPath for root</param>
+            <param name="convention">Valid only if validateForCurrentHostSystem = false, set convention predefineted from choide.</param>
+            <param name="customOptionsConvention">Optional to invalidate for default in win system if options for behavior for path and file is valid.</param>
+            <param name="customExtraInvalidCharsForPath">Extra vars chars to check if valid in this path. (For default use list of chars prohibited on system win NTFS) also use a array empty {} to not check validatation</param>
+            <param name="customExtraNamesDoNotUseInRootSystem">Optional to invalidate Path if a path in Root contains one of this name list used from system for convention internal, default is named of win system ntfs</param>
+            <param name="customExtraNamesDoNotUseForFileName">Optional to invalidate Path if a path in cas have filename final contains one of this name list used from system for convention internal, default is named internal of win system ntfs</param>
+            <param name="NameHostForCustomConvention">Optional for name attribuite to host with custom convention to apply.</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.ApplyPolicyConventions">
+            <summary>
+                On course of alter conventions this method
+                reapply changes before use to check validity
+                of path or filename.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.GetTypeHostValidation(System.Boolean,System.String,System.String,System.Nullable{HelperAndToolsForTest.IO.HostType}@,System.String@)">
+            <summary>
+                Set scope of this convention or options ofor this Convention in <see cref="T:HelperAndToolsForTest.IO.TypeConvention"/>
+            </summary>
+            <param name="validateForCurrentHostSystem">If result from current RUNTIME host</param>
+            <param name="convention">If use a Picked partiulcar HOST</param>
+            <param name="signinAsVariant">If from defaults Convention as applied variants on default</param>
+            <param name="HostValidation">Return string valid for catalog this conventions</param>
+            <param name="CustomHostName">On Custom type defined a name to attribuite for catalog.</param>
+            <returns>Type of Convention scope</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.setRuntimePlusExtraDefaultsListOfInvalidCharsForPath">
+            <summary>Fill By RUNTIME DISCOVER ListOfInvalidCharsForPath with defaultsExtraCharsNotValidPathXXXSystem</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.setPickedPlusExtraDefaultsListOfInvalidCharsForPath(HelperAndToolsForTest.IO.HostType)">
+            <summary>Fill By PICKED USER ListOfInvalidCharsForPath with defaultsExtraCharsNotValidPathXXXSystem</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.setRuntimePlusExtraDefaultsRestrictedNameOnRootForPath">
+            <summary>Fill By RUNTIME DISCOVER values name not valid for root in reservedNamesPathRootXXXSystem</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.setPickedPlusExtraDefaultsRestrictedNameOnRootForPath(HelperAndToolsForTest.IO.HostType)">
+            <summary>Fill By PICKED USER List of name reserved in HOST with reservedNamesPathRootXXXSystem</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.setRuntimePlusExtraDefaultsRestrictedNamedForFileInPath">
+            <summary>Fill By RUNTIME DISCOVER values name not valid for use file name in reservedNamesForFileXXXSystem</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.HostTypeConvention.setPickedPlusExtraDefaultsRestrictedNamedForFileInPath(HelperAndToolsForTest.IO.HostType)">
+            <summary>Fill By PICKED USER List of name reserved do not use for filename with reservedNamesForFileXXXSystem</summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.PolicyLengths">
+            <summary>
+                On Policy define a properties common for lenght
+                of elements well to be compose a path on your elements.
+            </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PolicyLengths.NameOfDirectory">
+            <summary>For convention use a length max for name of all directory</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PolicyLengths.NameOfFile">
+            <summary>For convention use a length max for name of all FileName</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PolicyLengths.EntirePath">
+            <summary>For convention use a length max for string of path complete</summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.OptionsConvention">
+            <summary>
+                Options for Type conventions validation in use from this HostTypeConvention 
+                at the moment of the instance or Picked from list defaults or custom.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.OptionsConvention.HostValidation">
+            <summary>
+                Name and description of HOST and type conventions is in use of 
+                OS filesytem if resolved convention from host in execution, or Name of 
+                Host Picked on choice from use, or if custom name attribuite for ipotetic host.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.OptionsConvention.ConventionType">
+            <summary>
+                Return type of validation setted for this instance of host convention.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.OptionsConvention.HostConvention">
+            <summary>
+                Return Host Convention in use.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.OptionsConvention.Lengths">
+            <summary>
+                Max lengths for Directory Name, File Name, Entire Path, etc.
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.OptionsConvention.CheckEndNameOnPath">
+            <summary>
+                Return assignment in convention applied from runtime or customized from user, if do use end of path do not end with period or space.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.#ctor(System.Nullable{System.Boolean})">
+            <summary>
+                RUNTIME - Return a default conventions in use of current FileSystem at Runtime
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.#ctor(HelperAndToolsForTest.IO.HostType)">
+            <summary>
+                PICKED - Return a default conventions  from user to use in path and file system target.
+            </summary>
+            <param name="convention">Set convention predefineted from choice HOST managed from this class.</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.#ctor(System.String,HelperAndToolsForTest.IO.OptionsConvention)">
+            <summary>
+                CUSTOM -Return a custom conventions definited from user to use in path and file system target.
+            </summary>
+            <param name="NameofCustomHost">Name of Host Convention well to be use this Options</param>
+            <param name="customTypeConvention">Object TypeConvention with properties to apply for this object for alter changes</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.#ctor(System.Boolean,System.Nullable{HelperAndToolsForTest.IO.HostType},HelperAndToolsForTest.IO.OptionsConvention,System.String)">
+            <summary>
+                Return a default options of convention in use of current FileSystem at Runtime if argument <paramref name="validateForCurrentHostSystem"/> is true. 
+                The Behavior is in case of true for Runtime Host in execution, is if Runtime in not resolved for 
+                cause of system os with filesystem custom, this object use other params to apply custom conventions in case of OTHER system.
+                Also in case of <paramref name="validateForCurrentHostSystem"/> is false the custom conventions in other arguments is 
+                applyed in mode esclusive without add internal clausole of system in execution.
+            </summary>
+            <param name="validateForCurrentHostSystem"> if True = check if chars based on current Host Type file system also not check and use only extraInvalidCharsForPath if filled or null, and if windows system check FullQualifiedPath for root</param>
+            <param name="convention">Valid only if validateForCurrentHostSystem = false, set convention predefineted from choide.</param>
+            <param name="customTypeConvention">Object TypeConvention with properies to apply on this object for alter changes</param>
+            <param name="NameHostForCustomConvention">Optional for name attribuite to host with custom convention to apply.</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.applyDefaultsOptionsPolicyForOSGeneral">
+            <summary>Defaults for Systems base on FreeBSD</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.applyDefaultsOptionsPolicyForOSWindows">
+            <summary>Defaults for Systems base on Windows</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.applyDefaultsOptionsPolicyForOSX">
+            <summary>Defaults for Systems base on OSX MAC</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.applyDefaultsOptionsPolicyForOSLinux">
+            <summary>Defaults for Systems base on LINUX</summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.OptionsConvention.applyDefaultsOptionsPolicyForOSFreeBSD">
+            <summary>Defaults for Systems base on FreeBSD</summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.PathEqualityComparer">
+            <summary>
+                Determines equality of path strings.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathEqualityComparer.Equals(System.String,System.String)">
+            <summary>Equality comparer implementation for two string rappresentative for path</summary>
+            <param name="x">Path A</param>
+            <param name="y">Path B</param>
+            <returns>True if equal</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathEqualityComparer.GetHashCode(System.String)">
+            <summary>Hashcode For equalit implementation comparer</summary>
+            <param name="obj"></param>
+            <returns>Hash of equailty object value</returns>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.PathQualified">
+            <summary>
+                On check this, the method check if root is Valid without chars and reserveded name on os winodws or in generally
+                if a path is valid for Full Qualified question name convention.
+                For example.:
+                on windows .:   "C:Documents" is False for FullQualified and True For Rooted on linux is True 
+                on windows .:   "/Documents" is False for FullQualified and True For Rooted on linux is True
+                on windows .:   "C:\Documents" is True for FullQualified and True For Rooted on linux is True
+                
+                If use a chars or name intranal a windows used for convention we special name, or use space finals or period . at end
+                the method return false.
+                
+                The questions for validate a Path in use check if path is a Relative or Absolute and if present 
+                on string used for path a filename convention with or not with extension.
+                
+                Example.:
+                
+                    Question IsRelativeQualifiedPathForUseToFileNameWithoutExtension: case 1    // Relative
+                    Question IsRootQualifiedPathForUseToFileNameWithoutExtension: case 2        // Absolute
+                    Question IsFullQualifiedPathForUseToFileNameWithoutExtension: case 3        // UNC DRIVE Absolute
+                    
+                1: C:Documents\filename        is Rooted not full with result to is relative a destination and valid for use to apply with filename without extension.
+                    --> Result called from c:\project\myBin result is c:\project\myBin\Documents\filename
+                2: /Documents/filename         is Rooted not full with result to is absolute for destination and valid for use to apply with filename without extension.
+                    --> Result called from c:\project\myBin result is c:\Documents\filename.ext 
+                3: C:/Documents/filename.ext   is Rooted And Full with result to is absolute for destination and valid for use to apply with filename without extension.
+                    --> Result called from c:\project\myBin result is c:\Documents\filename.ext 
+                    
+                    Question IsRelativeQualifiedPathForUseToFileNameAndExtension: case 1    // Relative
+                    Question IsRootQualifiedPathForUseToFileNameAndExtension: case 2        // Absolute
+                    Question IsFullQualifiedPathForUseToFileNameAndExtension: case 3        // UNC DRIVE Absolute
+                    
+                1: C:Documents\filename.ext    is Rooted not full with result to is relative a destination and valid for use to apply with filename comprensive of extension.
+                    --> Result called from c:\project\myBin result is c:\project\myBin\Documents\filename.ext 
+                2: /Documents/filename.ext     is Rooted not full with result to is absolute for destination and valid for use to apply with filename comprensive of extension.
+                    --> Result called from c:\project\myBin result is c:\Documents\filename.ext 
+                3: C:/Documents/filename.ext   is Rooted And Full with result to is absolute for destination and valid for use to apply with filename comprensive of extension.
+                    --> Result called from c:\project\myBin result is c:\Documents\filename.ext 
+                    
+                    Question IsRelativeQualifiedPathForUseToDirectoryName: case 1   // Relative
+                    Question IsRootQualifiedPathForUseToDirectoryName: case 2       // Absolute
+                    Question IsFullQualifiedPathForUseToDirectoryName: case 3       // UNC DRIVE Absolute
+                    
+                1: C:Documents\directoryname\  is Rooted not full with result to is relative a destination and valid for use to apply for sub Directory with Name.
+                    --> Result called from c:\project\myBin result is c:\project\myBin\Documents\directoryname\ 
+                2: /Documents/directoryname/   is Rooted not full with result to is absolute for destination and valid for use to apply for sub Directory with Name.
+                    --> Result called from c:\project\myBin result is c:\Documents\directoryname\ 
+                3: C:/Documents/directoryname/ is Rooted And Full with result to is absolute for destination and valid for use to apply for sub Directory with Name.
+                    --> Result called from c:\project\myBin result is c:\Documents\directoryname\
+            
+            </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsFullQualified">
+            <summary> IS_FULL_PATH_QUALIFIED OR NO_FULL_PATH_QUALIFIED </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsFullWithFileNameWithoutExtension">
+            <summary> IS_FULL_PATH_WITH_DIRECTORYNAME OR NO_FULL_PATH_WITH_DIRECTORYNAME </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsFullWithFileNameAndExtension">
+            <summary>IS_FULL_PATH_WITH_FILENAME_AND_EXT || NO_FULL_PATH_WITH_FILENAME_AND_EXT</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsFullWithOnlyDirectoryName">
+            <summary>IS_FULL_PATH_WITH_FILENAME_WITHOUT_EXT || NO_FULL_PATH_WITH_FILENAME_WITHOUT_EXT</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRootQualified">
+            <summary> IS_FULL_PATH_ROOT OR NO_FULL_PATH_ROOT </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRootWithFileNameWithoutExtension">
+            <summary>IS_ABSOLUTE_PATH_WITH_DIRECTORYNAME || NO_FULL_PATH_WITH_DIRECTORYNAME</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRootWithFileNameAndExtension">
+            <summary>IS_ABSOLUTE_PATH_WITH_FILENAME_AND_EXT || NO_ABSOLUTE_PATH_WITH_FILENAME_AND_EXT</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRootWithOnlyDirectoryName">
+            <summary>IS_ABSOLUTE_PATH_WITH_FILENAME_WITHOUT_EXT || NO_ABSOLUTE_PATH_WITH_FILENAME_WITHOUT_EXT</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRelativeQualified">
+            <summary> IS_RELATIVE_PATH_ROOT OR NO_RELATIVE_PATH_ROOT </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRelativeWithFileNameWithoutExtension">
+            <summary>IS_RELATIVE_PATH_WITH_DIRECTORYNAME || NO_RELATIVE_PATH_WITH_DIRECTORYNAME</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRelativeWithFileNameAndExtension">
+            <summary>IS_RELATIVE_PATH_WITH_FILENAME_AND_EXT || NO_RELATIVE_PATH_WITH_FILENAME_AND_EXT</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathQualified.IsRelativeWithOnlyDirectoryName">
+            <summary>IS_RELATIVE_PATH_WITH_FILENAME_WITHOUT_EXT || NO_RELATIVE_PATH_WITH_FILENAME_WITHOUT_EXT</summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.PathType">
+            <summary>
+                On Full Path or Absolute or Relative Paths
+                check as if file info iss relative to scope
+                in use to for Directory Target, or File Destination 
+                with or not with extension final.
+            </summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathType.OnlyRoot">
+            <summary>Result of analyze string is probabilly Root without Path Directories and not contain a filename</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathType.OnlyDirectories">
+            <summary>Result of analyze string is probabilly Path Directories and not contain a filename</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathType.OnlyFileWithExtension">
+            <summary>Result of analyze string is only filename without extension, no contains Path parent</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathType.OnlyFileWithoutExtension">
+            <summary>Result of analyze string is only filename with extension, no contains Path parent</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathType.DirectoriesWithFilenameWithoutExtension">
+            <summary>Result of analyze string is only filename with extension, with probabilly Path Directories and contain a filename without extension</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathType.DirectoriesWithFilenameAndExtension">
+            <summary>Result of analyze string is only filename with extension, with probabilly Path Directories and contain a filename with extension</summary>
+        </member>
+        <member name="F:HelperAndToolsForTest.IO.PathType.NotValid">
+            <summary>Result of analyze string is not valid or null for check</summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.PathUtils">
+            <summary>
+                Utils statics method concern String contained a Path
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.#cctor">
+            <summary>
+                Reference base
+            </summary>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.PathUtils.FullPathOfCurrentContextBin">
+            <summary>
+                Returns the directory bin of context.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.AnalyzeStringPathOrFileQualifier(System.String,System.Boolean,System.Boolean@,System.Boolean@,System.String@,System.String@,System.String@,System.String@,HelperAndToolsForTest.IO.HostTypeConvention)">
+            <summary>
+                Check as string if is it a valid string to use for
+                full path comprensive of filename and directory.
+            </summary>
+            <param name="stringPathCompleteOrPartialOrOnlyFile">String we to contain a Full qualified path and or not filename and or not extension or not or also partial path and filename and or not extension or also nul path and only name of file with or not extension.</param>
+            <param name="validate">Check validate Chars and string not null or space also not validate for error or warnings for this.</param>
+            <param name="isPathFullyQualified">If result a Full Qualified Path Valid</param>
+            <param name="isPathRootQualified">If has a Root Qualified Path Valid</param>
+            <param name="rootOfPath">Return a Root identificative of current path if exist</param>
+            <param name="fileNameFound">If contain a valid filename</param>
+            <param name="extensionFound">If filename is with a valid extension</param>
+            <param name="errororwarnings">Error or Wanrings on string analyzer</param>
+            <param name="convention"> For default analyze path on string with convention used a runtime of host, also use this object to customize behavior to validate</param>
+            <returns>True for analyzed path and file, and not have null or space not valid or other conventions exsclusive of host.</returns>
+            <remarks>
+                On Analyze string to view if is qualified as path valid.
+                
+                    Check If Path is a Path Full example.: c:\dir\ x:\dir\sub\ c:\dir\subdir\filenoextension c:\dir\subdir\file.ext
+                    or Path is a Absolute.: \dir\ \dir\sub\ \dir\subdir\filenoextension \dir\subdir\file.ext
+                    or Path is a Relative.: dir\ dir\sub dirorfile subdir\file.ext .\subdir\ .\dir\file.ext
+                    
+                    Check return if a Path contain only file example.: file file.ext namefile.abc
+                    
+                    Check return if filenae only or filename in a context of path of sequesnce dirs is or not with extension
+                    
+                    If not resolve return error or warnings in presence of Chars not valid on path or on filename, check if
+                    string path is not empty and not is sull and for default valid a convention if a end of path not conatin path or period
+                    and this and other is modeled to valuate presumible path from conventions dictate in object
+                    of conventison <see cref="T:HelperAndToolsForTest.IO.HostTypeConvention"/>.
+                    
+                    This conventions assume for default context of string analayzed resolve with conventions 
+                    for a Host on execution in runtime, also is it possible to use specific host typre from
+                    custom conventions from default, or custom conventions from arguments.
+                    
+                    ** For Full Qualified 
+                    Possible patterns for the string returned by this method are on MSDN as follows:
+                        An empty string (path specified a relative path on the current drive or volume).
+                        ".\dir\" a relative path from this execution
+                        "/" (path specified an absolute path on the current drive).
+                        "X:" (path specified a relative path on a drive, where X represents a drive or volume letter).
+                        "X:/" (path specified an absolute path on a given drive).
+                        "\\ComputerName\SharedFolder" (a UNC path).
+            </remarks>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.FileNameContainsReferenceToPath(System.String)">
+            <summary>
+                Check that the file name does not contain a reference path but only and exclusively a file name.
+            </summary>
+            <param name="FileName">The string which presumably should be just a name to give to a file.</param>
+            <returns>True if filename is a string valid as clean name without other references to a path.</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.FileNameIsValid(System.String,System.String@,System.Boolean,System.Boolean,HelperAndToolsForTest.IO.HostTypeConvention)">
+            <summary>
+                Return if a string contain probabilly filename is valid to use in current OS
+            </summary>
+            <param name="fileName">String for filename to adopt for check if is valid</param>
+            <param name="errororwarning">In out return specific error cause</param>
+            <param name="checkIfFilenameisACleanName">Invalidate a filename if name is part of path relative and not exclusive name of file</param>
+            <param name="checkIfFilenameIsReservedOnHost">Invalidate a filename if name file end with space or period .</param>
+            <param name="convention"> For default analyze path on string with convention used a runtime of host, also use this object to customize behavior to validate</param>
+            <remarks>
+            
+                with args Restrictive this chars for windows is negated
+            
+                The following reserved characters:
+                  (less than) (** not visible for this xml in this remark)
+                > (greater than)
+                : (colon)
+                " (double quote)
+                / (forward slash)
+                \ (backslash)
+                | (vertical bar or pipe)
+                ? (question mark)
+                * (asterisk)
+                
+                Integer value zero, sometimes referred to as the ASCII NUL character
+                
+                Special conventions names
+                
+                CON, PRN, AUX, NUL, COM1, COM2, COM3, COM4, 
+                COM5, COM6, COM7, COM8, COM9, LPT1, LPT2, LPT3, 
+                LPT4, LPT5, LPT6, LPT7, LPT8, and LPT9.
+                ** Also avoid these names followed immediately by an extension; 
+                   for example, NUL.txt is not recommended.For more information
+            
+                Do not end a file or directory name with a space or a period.Although the 
+                underlying file system may support such names, the Windows shell and user 
+                interface does not.However, it is acceptable to specify a period as the 
+                first character of a name.For example, ".temp".        
+            </remarks>
+            <returns>True Valid FileName</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.PathTypeIsValidForPromoteAt(System.String,HelperAndToolsForTest.IO.PathQualified,System.String@,HelperAndToolsForTest.IO.HostTypeConvention,System.Boolean)">
+            <summary>
+                Return if a string contain probabilly path is valid to use in current OS
+            </summary>
+            <param name="path">String for path to adopt for check if is valid</param>
+            <param name="question">Check validation for scope to promote a string path valid for <see cref="T:HelperAndToolsForTest.IO.PathQualified"/></param>
+            <param name="conventionHost">If not specified use a defaults from Runtime OS in execution policy for standard conventions to check validity also use a object <see cref="T:HelperAndToolsForTest.IO.HostTypeConvention"/> to validate policy and options for this path.</param>
+            <param name="validate">Check non conformity on Name File or Directory or name do no use in os destination</param>
+            <param name="errororwarning">Return a error on confomity of question or warning if ambiguos for path to correlate question</param>
+            <returns>True if question is conform or false if not conform</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.GetPathType(System.String,System.String@,System.String@,System.Boolean)">
+            <summary>
+                Return if a string contain probabilly path is valid to use in current OS
+            </summary>
+            <param name="path">String for path to adopt for check if is valid</param>
+            <param name="qualified">Return INVALID FULL ABOSOLUTE OR RELATIVE</param>
+            <param name="validate">Check non conformity on Name File or Directory or name do no use in os destination</param>
+            <param name="errororwarning">Return a error on confomity of question or warning if ambiguos for path to correlate question</param>
+            <returns>True if question is conform or false if not conform</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.IsPathFullyQualified(System.String)">
+            <summary>
+                Universal use with or without netstandard
+            </summary>
+            <param name="path">path to check if is Full</param>
+            <returns>True if path is verify on UNC path to promote at Full Wualified name</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.GetNextNameCountedForFile(System.IO.FileInfo)">
+            <summary>
+                Returns a valid path for destination when file already exist.
+            </summary>
+            <param name="file">Object InfoFile on conain a ref to file relative to get next valid item on directory existent.</param>
+            <returns>A path that doesn't relate to any existing file or directory.</returns>
+            <example>
+                Assuming the directory <c>C:\MyDir\</c> contains the file <c>FileTest.txt</c>,
+                the code <c>PathUtils.GetNextNameCountedForFile(new FileInfo(@"C:\MyDir\FileTest.txt"));</c>
+                will return a next valid file name counted to use<c>C:\MyDir\FileTest(2).txt</c>.
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.GetRelativeFilePath(System.String,System.String)">
+            <summary>
+                Returns the relative path for file from alleged path to another.
+            </summary>
+            <param name="originPathFile">The path of file to make a relative from other.</param>
+            <param name="relativePathDestination">Path to make if is it relative to.</param>
+            <returns>A path relative for destination, if <see cref="M:System.IO.Path.Combine(System.String,System.String)">combined</see> with <c>relativeTo</c>, equals the original path.</returns>
+            <example>
+                <c>PathUtils.GetRelativeFilePath(@"C:\MyDir\SubDir\FileTest.txt", @"C:\MyDir")</c> will return <c>SubDir\File.txt</c>.
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.GetRelativeDirectoryPath(System.String,System.String)">
+            <summary>
+                Returns the relative path for directory from alleged path to another.
+            </summary>
+            <param name="originPathDirectory">The path of directory to make a relative from other.</param>
+            <param name="relativePathDestination">Path to make if is it relative to.</param>
+            <returns>A path relative for destination, if <see cref="M:System.IO.Path.Combine(System.String,System.String)">combined</see> with <c>relativeTo</c>, equals the original path.</returns>
+            <example>
+                <c>PathUtils.GetRelativeFilePath(@"C:\MyDir\SubDir\", @"C:\MyDir")</c> will return <c>SubDir\</c>.
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.GetMutualBaseDirectory(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Determines the mutual base directory of a set of paths.
+            </summary>
+            <param name="paths">List of paths to check if is conenitive respectivament.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.EscapeFilename_Windows(System.String,System.Boolean)">
+            <summary>
+                This will replace invalid chars with underscores, there are also some reserved 
+                words that it adds underscore to
+            </summary>
+            <param name="filename">String to escape if conains path</param>
+            <param name="containsFolder">Pass in true if filename represents a folder\file (passing true will allow slash)</param>
+            <remarks>
+                https://stackoverflow.com/questions/1976007/what-characters-are-forbidden-in-windows-and-linux-directory-names
+            </remarks>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.IsPathLocatedIn(System.String,System.String)">
+            <summary>
+                Returns whether one path is a sub-path of another.
+            </summary>
+            <param name="path">The supposed sub-path.</param>
+            <param name="baseDir">The (directory) path in which the supposed sub-path might be located in.</param>
+            <returns>True, if <c>path</c> is a sub-path of <c>baseDir</c>.</returns>
+            <example>
+                <c>PathUtils.IsPathLocatedIn(@"C:\MyDir\SubDir", @"C:\MyDir")</c> will return true.
+            </example>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.ArePathsEqual(System.String,System.String)">
+            <summary>
+                Returns whether two paths converted in full path are referring to the same path.
+            </summary>
+            <param name="firstPath">Path to check</param>
+            <param name="secondPath">Path to Confront</param>
+            <returns>True if equal also false</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.EnsureValidFileName(System.String)">
+            <summary>
+                Clean from chars not valid a ipotetic filename.
+            </summary>
+            <param name="fileNameToCheck">FileName to transform a valid filename for this os</param>
+            <returns>Cleaned filename with symbol _ subistuted from char not valid!</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.PathUtils.Multiply(System.String,System.Int32)">
+            <summary>Support extension on string to use in context current scope</summary>
+            <param name="source"></param>
+            <param name="multiplier"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HelperAndToolsForTest.IO.TemporaryFile">
+            <summary>
+                Helper to support creation of file temporary and dispose automaic.
+            </summary>
+            <example>
+                using(var file = new TemporaryFile())
+                {
+                    Assume.That(file.FileInfo.Length, Is.EqualTo(0))
+                
+                    File.WriteAllText(file, "write text after");
+                
+                    file.FileInfo.Refresh();
+                    Assert.That(file.FileInfo.Length, Is.GreaterThan(0));
+                }    
+            </example>
+        </member>
+        <member name="P:HelperAndToolsForTest.IO.TemporaryFile.FileInfo">
+            <summary>
+                Return context of file temprary
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.Boolean,System.Boolean)">
+            <summary>Empty random file in folder temporary</summary>
+            <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>Empty file (named) in folder temporary</summary>
+            <param name="useSomePath">Use a Path of relative fileName used in argumentation if exist directory well to contai also used only for name destination temp</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+            <param name="fileName">Name of File temporary to create</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.IO.FileInfo,System.Boolean,System.Boolean)">
+            <summary>Empty file (object file <see cref="P:HelperAndToolsForTest.IO.TemporaryFile.FileInfo"/>) in folder temporary</summary>
+            <param name="useSomePath">Use a Path of relative fileName used in argumentation if exist directory well to contain also used only for name destination temp</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+            <param name="temporaryFile">Object File to create</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.IO.Stream,System.Boolean,System.Boolean)">
+            <summary>File (with contents writed)  in folder temporary</summary>
+            <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+            <param name="initialFileContents">Content stream to write destination temp file</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.String,System.IO.Stream,System.Boolean,System.Boolean)">
+            <summary>File named (with contents writed)  in folder temporary</summary>
+            <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+            <param name="fileName">Name of File temporary to create</param>
+            <param name="initialFileContents">Content stream to write destination temp file</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.IO.FileInfo,System.IO.Stream,System.Boolean,System.Boolean)">
+            <summary>File object (with contents writed)  in folder temporary</summary>
+            <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+            <param name="temporaryFile">Object File to create</param>
+            <param name="initialFileContents">Content stream to write destination temp file</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.String,System.Text.Encoding,System.Boolean,System.Boolean)">
+            <summary>File (with contents writed)  in folder temporary</summary>
+            <param name="fileContents">Content textual to write destination temp file</param>
+            <param name="encoding">Encode of Text to use for write - Default UTF8</param>
+            <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.String,System.String,System.Text.Encoding,System.Boolean,System.Boolean)">
+            <summary>File named (with contents writed)  in folder temporary</summary>
+            <param name="fileName">Name of File temporary to create</param>
+            <param name="fileContents">Content textual to write destination temp file</param>
+            <param name="encoding">Encode of Text to use for write - Default UTF8</param>
+            <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.#ctor(System.IO.FileInfo,System.String,System.Text.Encoding,System.Boolean,System.Boolean)">
+            <summary>File Object (with contents writed)  in folder temporary</summary>
+            <param name="temporaryFile">Object File to create</param>
+            <param name="fileContents">Content textual to write destination temp file</param>
+            <param name="encoding">Encode of Text to use for write - Default UTF8</param>
+            <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
+            <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.IsDirectory(System.String)">
+            <summary>
+                Check if a Path is a Directory on file system or file or not valid
+            </summary>
+            <param name="path">Path to check this</param>
+            <returns>True = Is Directory, False Is File, Null Is Not Valid!</returns>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.NotDelete">
+            <summary></summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.op_Implicit(HelperAndToolsForTest.IO.TemporaryFile)~System.IO.FileInfo">
+            <summary></summary>
+            <param name="temporaryFile"></param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.op_Implicit(HelperAndToolsForTest.IO.TemporaryFile)~System.String">
+            <summary></summary>
+            <param name="temporaryFile"></param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.op_Explicit(System.IO.FileInfo)~HelperAndToolsForTest.IO.TemporaryFile">
+            <summary></summary>
+            <param name="temporaryFile"></param>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.Dispose">
+            <summary></summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.IO.TemporaryFile.Finalize">
+            <summary></summary>
+        </member>
+        <member name="T:HelperAndToolsForTest.Helper.Extensions.IOExtensions.StringPathExtensions">
+            <summary>
+                Simplify for FileInfo to get FileName withoust extension.
+            </summary>
+        </member>
+        <member name="M:HelperAndToolsForTest.Helper.Extensions.IOExtensions.StringPathExtensions.CleanForUsePathWindows(System.String,System.Boolean)">
+            <summary>
+                Remove from string as use for path in context from chars not conform
+                a windows system.
+            </summary>
+            <param name="expression"></param>
+            <param name="removeSpecialLettersHavingASign"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

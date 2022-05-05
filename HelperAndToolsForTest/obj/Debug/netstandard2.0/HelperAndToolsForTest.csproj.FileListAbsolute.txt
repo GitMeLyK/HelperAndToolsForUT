@@ -8,3 +8,4 @@ C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.dll
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.xml
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.pdb
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest\obj\Debug\netstandard2.0\HelperAndToolsForTest.csprojAssemblyReference.cache
