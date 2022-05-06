@@ -41,18 +41,37 @@ namespace HelperAndToolsForTest.Test.IO
             //      On Windows system check error on path with qualified full name incluse UNC root c: d: etc..
             List<string> ValidFullquelifiedPaths = new List<String>(new String[] {
                     @"c:\fold\subfold",             @"d:\fold\subfold\\sub",
-                    @"ac:\fold\subfold\",           @"d\fold\subfold\\sub\",
-                    @"\fold\subfold\",              @"fold\subfold\\sub\",
-                    @"x:\\\sharedlan\subfold",      @"yz:\\sharedlan\subfold\subfold\sub\",
+                    @"x:\\\sharedlan\subfold",      
                 });
 
             // Act  :: Check if is Full Path Qualified for Scope Directory ::
             foreach (string tpath in ValidFullquelifiedPaths)
             {
                 // Assert
-                Assert.IsFalse(new FileInfo(tpath).IsPathQualificableFull(TypePathSupposed.ForFolders, out string errororwarning));
-                Assert.NotNull(errororwarning);
+                Assert.IsTrue(new FileInfo(tpath).IsPathQualificableFull(TypePathSupposed.ForFolders, out string errororwarning));
+                Assert.IsNull(errororwarning);
             }
+
+            // Arrange
+            //      On Windows system check error on path with qualified full name incluse UNC root c: d: etc..
+            List<string> NotValidFullquelifiedPaths = new List<String>(new String[] {
+                    @"ac:\fold\subfold\",           @"d\fold\subfold\\sub\",
+                    @"fold\subfold\\sub\",          @"ac:\fold\subfold\",
+                    @"yz:\\sharedlan\subfold\subfold\sub\",
+                });
+
+            // Act  :: Check if is Full Path Qualified for Scope Directory ::
+            foreach (string tpath in NotValidFullquelifiedPaths)
+            {
+                // Assert
+                Assert.IsFalse(new FileInfo(tpath).IsPathQualificableFull(TypePathSupposed.ForFolders, out string errororwarning));
+                Assert.IsNull(errororwarning);
+            }
+
+            string tpath2 = @"\fold\subfold\";
+            Assert.IsFalse(new FileInfo(tpath2).IsPathQualificableFull(TypePathSupposed.ForFolders, out string errororwarning2));
+            Assert.IsNull(errororwarning2);
+
         }
 
         [Test]
@@ -61,17 +80,34 @@ namespace HelperAndToolsForTest.Test.IO
             // Arrange
             //      On Windows system check error on path with qualified full name incluse UNC root c: d: etc..
             List<string> ValidFullquelifiedPaths = new List<String>(new String[] {
-                    @"c:\fo:ld\subfold\",           @"d::\fold\subfold\\sub\",
-                    @"c::\\\\\fold\subfold\",       @"d:\fo|ld\subfold\\sub\",
+                    @"d::\fold\subfold\\sub\",
+                    @"c::\\\\\fold\subfold\"
                 });
 
             // Act  :: Check if is Full Path Qualified for Scope Directory ::
             foreach (string tpath in ValidFullquelifiedPaths)
             {
-                // Assert
+                // Assert (not valid
                 Assert.IsFalse(new FileInfo(tpath).IsPathQualificableFull( TypePathSupposed.ForFolders, out string errororwarning));
-                Assert.AreEqual(errororwarning, "warning: Chars not valid for Question Path");
+                Assert.IsNotEmpty(errororwarning);
             }
+
+            // Arrange
+            //      On Windows system check error on path with qualified full name incluse UNC root c: d: etc..
+            List<string> ValidFullquelifiedPaths2 = new List<String>(new String[] {
+                    @"c:\fo:ld\subfold\", @"d:\fo|ld\subfold\\sub\"
+                });
+
+            // Act  :: Check if is Full Path Qualified for Scope Directory ::
+            foreach (string tpath in ValidFullquelifiedPaths2)
+            {
+                // Assert (Valid for path with error on chars)
+                Assert.IsTrue(new FileInfo(tpath).IsPathQualificableFull(TypePathSupposed.ForFolders, out string errororwarning));
+                TestContext.WriteLine(errororwarning);
+                Assert.IsNotEmpty(errororwarning);
+            }
+
+
         }
 
 

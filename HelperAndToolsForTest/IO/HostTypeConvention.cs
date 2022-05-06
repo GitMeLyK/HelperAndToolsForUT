@@ -142,17 +142,17 @@ namespace HelperAndToolsForTest.IO
         /// <summary>
         ///     Return List of Names reserved only in Root with extra names if user use a custom conventions extra.
         /// </summary>
-        public string[] ReservedNamesForRoot { get; private set; }
+        public List<string> ReservedNamesForRoot { get; private set; }
 
         /// <summary>
         ///     Return List of Names reserved only in FileName with extra names if user use a custom conventions extra.
         /// </summary>
-        public string[] ReservedNamesForFileName { get; private set; }
+        public List<string> ReservedNamesForFileName { get; private set; }
 
         /// <summary>
         ///     Return List of Chars with extra if user use a custom conventions extra fo not valid assignment in sequence path.
         /// </summary>
-        public char[] ListOfInvalidCharsForPath { get; private set; }
+        public List<char> ListOfInvalidCharsForPath { get; private set; }
 
         /// <summary>
         ///     Return type of validation setted for this instance of host convention.
@@ -329,11 +329,11 @@ namespace HelperAndToolsForTest.IO
                 setPickedPlusExtraDefaultsListOfInvalidCharsForPath(HostFound);
             else  // Have TypeCurrentConvention == CUSTOM
                 // Start from Null Char + CUSTOM defined from parameteres user after.
-                ListOfInvalidCharsForPath = new[] { char.MinValue };
+                ListOfInvalidCharsForPath = new List<char>(); // [] { char.MinValue };
             //
             // :: Variants Always ADDed from parameter of this Convention Type. :: 
             if (_customExtraInvalidCharsForPath != null)
-                ListOfInvalidCharsForPath.Concat(_customExtraInvalidCharsForPath);                   // CUSTOM VARIANTS
+                ListOfInvalidCharsForPath = ListOfInvalidCharsForPath.Concat(_customExtraInvalidCharsForPath).ToList();                   // CUSTOM VARIANTS
             //
 
             // :: :: CONVENTION NAME RESERVED ON ROOT PATH :: ::
@@ -348,11 +348,11 @@ namespace HelperAndToolsForTest.IO
                 setPickedPlusExtraDefaultsRestrictedNameOnRootForPath(HostFound);
             else // TypeCurrentConvention == CUSTOM
                 // Start from List 0 element (all valid) + CUSTOM defined from parameteres user after.
-                ReservedNamesForRoot = new[] { "" };
+                ReservedNamesForRoot = new List<string>(); // new[] { "" };
             //
             // :: Variants Always ADDed from parameter of this Convention Type. :: 
             if (_customExtraNamesDoNotUseInRootSystem != null)
-                ReservedNamesForRoot.Concat(_customExtraNamesDoNotUseInRootSystem);     // CUSTOM VARIANTS
+                ReservedNamesForRoot = ReservedNamesForRoot.Concat(_customExtraNamesDoNotUseInRootSystem).ToList();     // CUSTOM VARIANTS
             //
 
             // :: :: CONVENTION NAME RESERVED FOR NAMED A FILE ON PATH :: ::
@@ -367,11 +367,11 @@ namespace HelperAndToolsForTest.IO
                 setPickedPlusExtraDefaultsRestrictedNamedForFileInPath(HostFound);
             else // TypeCurrentConvention == CUSTOM
                 // Start from List 0 element (all valid) + CUSTOM defined from parameteres user after.
-                ReservedNamesForFileName = new[] { "" };
+                ReservedNamesForFileName = new List<string>(); // new[] { "" };
             //
             // :: Variants Always ADDed from parameter of this Convention Type. :: 
             if (_customExtraNamesDoNotUseForFileName != null)
-                ReservedNamesForFileName.Concat(_customExtraNamesDoNotUseForFileName);     // CUSTOM VARIANTS
+                ReservedNamesForFileName = ReservedNamesForFileName.Concat(_customExtraNamesDoNotUseForFileName).ToList();     // CUSTOM VARIANTS
             //
 
         }
@@ -396,10 +396,12 @@ namespace HelperAndToolsForTest.IO
             if (validateForCurrentHostSystem)
             {
                 HostValidation = RuntimeInformation.OSDescription;
-                if (HostValidation.Contains("WIN")) convention = HostType.WINDOWS;
-                else if (HostValidation.Contains("IOS")) convention = HostType.IOS;
-                else if (HostValidation.Contains("LINUX")) convention = HostType.LINUX;
-                else if (HostValidation.Contains("FREEBSD")) convention = HostType.FREEBSD;
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) convention = HostType.WINDOWS;
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) convention = HostType.IOS;
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) convention = HostType.LINUX;
+#if (!NETSTANDARD2_0)
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD)) convention = HostType.FREEBSD;
+#endif
                 else if (HostValidation.Contains("OTHER")) convention = HostType.OTHER;
                 else {
                     convention = HostType.UKNOWED;
@@ -434,7 +436,7 @@ namespace HelperAndToolsForTest.IO
         private void setRuntimePlusExtraDefaultsListOfInvalidCharsForPath()
         {
             // :: Get Invelid Chars from Defaults Framework Path.GetInvalidPathChars ::
-            ListOfInvalidCharsForPath = Path.GetInvalidPathChars();                             // FOR THIS HOST GET OF PATH void    
+            ListOfInvalidCharsForPath = Path.GetInvalidPathChars().ToList<char>();        // FOR THIS HOST GET OF PATH void    
 
             // :: Add extra defaults Convention from this Concept Class ::            
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -455,19 +457,19 @@ namespace HelperAndToolsForTest.IO
         private void setPickedPlusExtraDefaultsListOfInvalidCharsForPath(HostType convention)
         {
             if (ListOfInvalidCharsForPath == null)
-                ListOfInvalidCharsForPath = new[] { char.MinValue };
+                ListOfInvalidCharsForPath = new List<char>();   // [] { char.MinValue };
 
             // :: Add extra defaults Convention from this Concept Class ::            
             if (convention == HostType.WINDOWS)
-                ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathWinSystem);        // WINDOWS default + extra
+                ListOfInvalidCharsForPath = ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathWinSystem).ToList();        // WINDOWS default + extra
             else if (convention == HostType.IOS)
-                ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathMacSystem);        // MAC     default + extra
+                ListOfInvalidCharsForPath = ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathMacSystem).ToList();        // MAC     default + extra
             else if (convention == HostType.LINUX)
-                ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathLinuxSystem);      // LINUX   default + extra
+                ListOfInvalidCharsForPath = ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathLinuxSystem).ToList();      // LINUX   default + extra
             else if (convention == HostType.FREEBSD)
-                ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathFreebsdSystem);      // FREEBSD default + extra
+                ListOfInvalidCharsForPath = ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathFreebsdSystem).ToList();      // FREEBSD default + extra
             else
-                ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathGeneralSystem);   // OTHER   default + extra
+                ListOfInvalidCharsForPath = ListOfInvalidCharsForPath.Concat(defaultsExtraCharsNotValidPathGeneralSystem).ToList();   // OTHER   default + extra
         }
 
         //
@@ -495,19 +497,19 @@ namespace HelperAndToolsForTest.IO
         private void setPickedPlusExtraDefaultsRestrictedNameOnRootForPath(HostType convention)
         {
             if (ReservedNamesForRoot == null)
-                ReservedNamesForRoot = new[] { "" };
+                ReservedNamesForRoot = new List<string>(); // new[] { "" };
 
             // :: Add extra defaults Convention from this Concept Class ::            
             if (convention == HostType.WINDOWS)
-                ReservedNamesForRoot.Concat(reservedNamesPathRootWinSystem);        // WINDOWS default + extra
+                ReservedNamesForRoot = ReservedNamesForRoot.Concat(reservedNamesPathRootWinSystem).ToList();        // WINDOWS default + extra
             else if (convention == HostType.IOS)
-                ReservedNamesForRoot.Concat(reservedNamesPathRootMacSystem);        // MAC     default + extra
+                ReservedNamesForRoot = ReservedNamesForRoot.Concat(reservedNamesPathRootMacSystem).ToList();        // MAC     default + extra
             else if (convention == HostType.LINUX)
-                ReservedNamesForRoot.Concat(reservedNamesPathRootLinuxSystem);      // LINUX   default + extra
+                ReservedNamesForRoot = ReservedNamesForRoot.Concat(reservedNamesPathRootLinuxSystem).ToList();      // LINUX   default + extra
             else if (convention == HostType.FREEBSD)
-                ReservedNamesForRoot.Concat(reservedNamesPathRootFreebsdSystem);    // FREEBSD default + extra
+                ReservedNamesForRoot = ReservedNamesForRoot.Concat(reservedNamesPathRootFreebsdSystem).ToList();    // FREEBSD default + extra
             else
-                ReservedNamesForRoot.Concat(reservedNamesPathRootGeneralSystem);    // OTHER   default + extra
+                ReservedNamesForRoot = ReservedNamesForRoot.Concat(reservedNamesPathRootGeneralSystem).ToList();    // OTHER   default + extra
         }
 
         //
@@ -535,19 +537,19 @@ namespace HelperAndToolsForTest.IO
         private void setPickedPlusExtraDefaultsRestrictedNamedForFileInPath(HostType convention)
         {
             if (ReservedNamesForFileName == null)
-                ReservedNamesForFileName = new[] { "" };
+                ReservedNamesForFileName = new List<string>(); // new[] { "" };
 
             // :: Add extra defaults Convention from this Concept Class ::            
             if (convention == HostType.WINDOWS)
-                ReservedNamesForFileName.Concat(reservedNamesForFileWinSystem);        // WINDOWS default + extra
+                ReservedNamesForFileName = ReservedNamesForFileName.Concat(reservedNamesForFileWinSystem).ToList();        // WINDOWS default + extra
             else if (convention == HostType.IOS)
-                ReservedNamesForFileName.Concat(reservedNamesForFileMacSystem);        // MAC     default + extra
+                ReservedNamesForFileName = ReservedNamesForFileName.Concat(reservedNamesForFileMacSystem).ToList();        // MAC     default + extra
             else if (convention == HostType.LINUX)
-                ReservedNamesForFileName.Concat(reservedNamesForFileLinuxSystem);      // LINUX   default + extra
+                ReservedNamesForFileName = ReservedNamesForFileName.Concat(reservedNamesForFileLinuxSystem).ToList();      // LINUX   default + extra
             else if (convention == HostType.FREEBSD)
-                ReservedNamesForFileName.Concat(reservedNamesForFileFreebsdSystem);    // FREEBSD default + extra
+                ReservedNamesForFileName = ReservedNamesForFileName.Concat(reservedNamesForFileFreebsdSystem).ToList();    // FREEBSD default + extra
             else
-                ReservedNamesForFileName.Concat(reservedNamesForFileGeneralSystem);    // OTHER   default + extra
+                ReservedNamesForFileName = ReservedNamesForFileName.Concat(reservedNamesForFileGeneralSystem).ToList();    // OTHER   default + extra
         }
 
         #endregion

@@ -119,7 +119,6 @@ C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\bin\Debug\net5.0\HelperAndToolsForTest.dll
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\bin\Debug\net5.0\HelperAndToolsForTest.pdb
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\bin\Debug\net5.0\HelperAndToolsForTest.xml
-C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\HelperAndToolsForTest.Test.csprojAssemblyReference.cache
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\HelperAndToolsForTest.Test.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\HelperAndToolsForTest.Test.AssemblyInfoInputs.cache
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\HelperAndToolsForTest.Test.AssemblyInfo.cs
@@ -129,3 +128,4 @@ C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\ref\HelperAndToolsForTest.Test.dll
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\HelperAndToolsForTest.Test.pdb
 C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\HelperAndToolsForTest.Test.genruntimeconfig.cache
+C:\Users\carmelo.daniele\source\repos\HelperAndToolsForUT\HelperAndToolsForTest.Test\obj\Debug\net5.0\HelperAndToolsForTest.Test.csproj.AssemblyReference.cache

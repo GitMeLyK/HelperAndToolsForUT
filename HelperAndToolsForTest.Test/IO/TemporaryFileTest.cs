@@ -52,7 +52,7 @@ namespace HelperAndToolsForUT.Helper.Test.IOTools
         [Test]
         public void TempFileNamedPredicate_WhenUseTempSubDirectoryContextAndWriteAfter()
         {
-            using (var file = new TemporaryFile("SubFoldTemp/TestTempFileName.tst"))
+            using (var file = new TemporaryFile("SubFoldTemp13/TestTempFileName.tst"))
             {
                 Assume.That(file.FileInfo.Length, Is.EqualTo(0));
 
@@ -61,7 +61,7 @@ namespace HelperAndToolsForUT.Helper.Test.IOTools
                 file.FileInfo.Refresh();
                 Assert.AreEqual(file.FileInfo.Extension, ".tst");
                 Assert.IsTrue(file.FileInfo.FullName.Contains("\\Temp\\"));
-                Assert.IsTrue(file.FileInfo.FullName.Contains("\\Temp\\SubFoldTemp\\"));
+                Assert.IsFalse(file.FileInfo.FullName.Contains("\\Temp\\SubFoldTemp13\\"));
 
             }
         }

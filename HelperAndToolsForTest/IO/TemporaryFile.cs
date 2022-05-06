@@ -37,7 +37,8 @@ namespace HelperAndToolsForTest.IO
         /// <summary>Empty random file in folder temporary</summary>
         /// <param name="useSomePath">Use a some Path of this process in execution well to be call this util</param>
         /// <param name="overwriteIfExist">If exist detination file temporary, overwrite if exist</param>
-        public TemporaryFile(bool useSomePath = false, bool overwriteIfExist = false) : this(useSomePath, overwriteIfExist, null) { }
+        public TemporaryFile(bool useSomePath = false, bool overwriteIfExist = false) 
+            : this(new FileInfo( System.IO.Path.GetRandomFileName()), useSomePath, overwriteIfExist) { }
 
         /// <summary>Empty file (named) in folder temporary</summary>
         /// <param name="useSomePath">Use a Path of relative fileName used in argumentation if exist directory well to contai also used only for name destination temp</param>
@@ -151,6 +152,7 @@ namespace HelperAndToolsForTest.IO
                         PathFileExist = fileInfo.Exists;
                     }
                     else {
+                        //
                         if (IsDirectory(fileInfo.Directory.FullName) == true)
                             PathDirExist = fileInfo.Directory.Exists;
                         //
@@ -165,6 +167,7 @@ namespace HelperAndToolsForTest.IO
                     tmpFileInfo = new FileInfo(Path.GetTempFileName());
                     if (fileInfo != null && useSomePath)
                     {
+
                         if (PathDirExist && PathFileExist)
                         {
                             tmpPath = Path.Combine(fileInfo.Directory.FullName, fileInfo.Name + "_" + tmpFileInfo.Name, tmpFileInfo.Extension);
@@ -175,7 +178,10 @@ namespace HelperAndToolsForTest.IO
                         }
                     }
                     else if (fileInfo != null && !useSomePath) {
-                        tmpPath = Path.Combine(tmpFileInfo.Directory.FullName, fileInfo.GetFileNameWithoutExtension() + "_" + tmpFileInfo.GetFileNameWithoutExtension() + fileInfo.Extension);
+                        if(PathDirExist)
+                            tmpPath = Path.Combine(tmpFileInfo.Directory.FullName, fileInfo.GetFileNameWithoutExtension() + "_" + tmpFileInfo.GetFileNameWithoutExtension() + fileInfo.Extension);
+                        else
+                            tmpPath = Path.Combine(tmpFileInfo.Directory.FullName, fileInfo.GetFileNameWithoutExtension() + "_" + tmpFileInfo.GetFileNameWithoutExtension() + fileInfo.Extension);
                     }
                     else {
                         tmpPath = tmpFileInfo.FullName;

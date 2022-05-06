@@ -145,6 +145,9 @@ namespace HelperAndToolsForTest.IO
     public static class PathUtils
     {
 
+        /// <summary>
+        ///     Context of directory BIN
+        /// </summary>
         public static string contextBinDir;
 
         #region ###         Context Assembly BIN path        ###
@@ -242,7 +245,7 @@ namespace HelperAndToolsForTest.IO
 
             // Check if a Full Qualified and remove to Check Valid Chars and sequence correct for Path.
             // Only control is valid for windows system compatibiles (Win DOS NTF on linux etc.)
-            if (convention.ConventionType == TypeConvention.RUNTIME && PathUtils.IsPathFullyQualified(stringPathCompleteOrPartialOrOnlyFile)) {
+            if ( PathUtils.IsPathFullyQualified(stringPathCompleteOrPartialOrOnlyFile)) {
                 currentPath = stringPathCompleteOrPartialOrOnlyFile.Replace(Path.GetPathRoot(stringPathCompleteOrPartialOrOnlyFile), "");
                 isPathFullyQualified = true;
             }
@@ -251,7 +254,7 @@ namespace HelperAndToolsForTest.IO
 
             // :: Check Root of Path ::
             if (isPathFullyQualified)
-                rootOfPath = Path.GetPathRoot(currentPath);
+                rootOfPath = Path.GetPathRoot(stringPathCompleteOrPartialOrOnlyFile);
             else
                 rootOfPath = "";        // Assume this relative at context of execution current and not in string analayzed
             //
@@ -264,7 +267,7 @@ namespace HelperAndToolsForTest.IO
 
             // :: Check if root path start with special names reserved ::
             bool errInvalidRootStart = false;
-            if (isPathRootQualified && validate) {
+            if ((isPathRootQualified || isPathFullyQualified) && validate) {
                 errInvalidRootStart = convention.ReservedNamesForRoot.Any(x => currentPath.StartsWith(x));
             }
             if (errInvalidRootStart) {
@@ -390,7 +393,7 @@ namespace HelperAndToolsForTest.IO
             }
 
             // name on this check if name is clean name and not a part of relative path in subfolders.
-            if (Path.GetDirectoryName(fileName) != null) {
+            if (Path.GetDirectoryName(fileName) != null && Path.GetDirectoryName(fileName) != "") {
                 errororwarning += "warning: the filename is not a string that contains only the filename, it also has references to a path.\n";
                 if (checkIfFilenameisACleanName) return false;
             }

@@ -109,7 +109,7 @@ namespace HelperAndToolsForTest.Test.IO
 
             foreach (string filename in notValidFileNames){
                 Assert.IsFalse(PathUtils.FileNameIsValid(filename, out string errororwarning));
-                Assert.IsNull(errororwarning);
+                Assert.IsNotNull(errororwarning);
             }
         }
 
@@ -182,28 +182,28 @@ namespace HelperAndToolsForTest.Test.IO
                 Assert.AreEqual(expectedIsValid, result, $" {Enum.GetName(typequestion)} for path.valid('{path }') not is {expectedIsValid}");
 
             // :: valuate (in use with this convention) a Result with value of Expected for Assert is True or False ::
+            if (errororwarning == null) errororwarning = "";
 
             // :: For Convention "Invalid Chars" in Path ::
-            if(expectedIsValidChars != null)
+            if (expectedIsValidChars != null)
                 if (expectedIsValidChars.Value) {
-                    if (errororwarning == null) errororwarning = "";
-                    Assert.That(errororwarning.Contains("Not Valid Chars"), $" {Enum.GetName(typequestion)} for path.IsValidChars('{path}') not is {expectedIsValidChars}");
+                    Assert.That( errororwarning == "" , $" {Enum.GetName(typequestion)} for path.IsValidChars('{path}') not is {expectedIsValidChars}");
                 } else {
-                    Assert.That(!errororwarning.Contains("Not Valid Chars"), $" {Enum.GetName(typequestion)} for path.IsValidChars('{path }') not is {expectedIsValidChars}");
+                    Assert.That(errororwarning.Contains("Not Valid Chars"), $" {Enum.GetName(typequestion)} for path.IsValidChars('{path }') not is {expectedIsValidChars}");
                 }
 
             // :: For Convention "End of Path" with on not space and period in Path ::
             if (expectedIsValidPathEnd != null)
                 if (expectedIsValidPathEnd.Value) {
-                    Assert.That(errororwarning.Contains("Not End correct"), $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidPathEnd}");
+                    Assert.That(errororwarning == "", $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidPathEnd}");
                 } else {
-                    Assert.That(!errororwarning.Contains("Not End correct"), $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidPathEnd}");
+                    Assert.That(errororwarning.Contains("Not End correct"), $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidPathEnd}");
                 }
 
             // :: For Convention "Name for Root reserved" for names prohibited in Root of Path ::
             if (expectedIsValidNamedRoot != null)
                 if (expectedIsValidNamedRoot.Value) {
-                    Assert.That(errororwarning.Contains("Root Path with reserved name"), $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidNamedRoot}");
+                    Assert.That(errororwarning == "", $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidNamedRoot}");
                 } else {
                     Assert.That(!errororwarning.Contains("Root Path with reserved name"), $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidNamedRoot}");
                 }
@@ -211,7 +211,7 @@ namespace HelperAndToolsForTest.Test.IO
             // :: For Convention "Name for File reserved" for names prohibited in FileName of Path ::
             if(expectedIsValidFileName != null)
                 if (expectedIsValidFileName.Value) {
-                    Assert.That(errororwarning.Contains("FileName not valid"), $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidFileName}");
+                    Assert.That(errororwarning == "", $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidFileName}");
                 } else {
                     Assert.That(!errororwarning.Contains("FileName not valid"), $" {Enum.GetName(typequestion)} for path.EndOfPath('{path }') not is {expectedIsValidFileName}");
                 }

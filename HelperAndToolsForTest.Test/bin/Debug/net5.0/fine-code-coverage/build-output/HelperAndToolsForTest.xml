@@ -2363,6 +2363,11 @@
                 Utils statics method concern String contained a Path
             </summary>
         </member>
+        <member name="F:HelperAndToolsForTest.IO.PathUtils.contextBinDir">
+            <summary>
+                Context of directory BIN
+            </summary>
+        </member>
         <member name="M:HelperAndToolsForTest.IO.PathUtils.#cctor">
             <summary>
                 Reference base
